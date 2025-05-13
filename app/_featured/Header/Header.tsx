@@ -7,11 +7,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import "./header.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
+import { toggleSidebar } from "@/redux/sidebar/sidebarSlice";
 
 const Header: React.FC = () => {
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
-
+  const isOpen = useSelector((state: RootState) => state.sidebar.isOpen);
+  const dispatch = useDispatch();
   return (
     <div className="w-full fixed top-0 left-0 bg-[#f4f4f4] h-[70px] flex items-center">
       <div className="max-w-[1000px] mx-auto w-full flex justify-between items-center">
@@ -39,7 +42,7 @@ const Header: React.FC = () => {
         </ul>
 
         <div className="header__hamburger">
-          <button onClick={() => setIsOpen(!isOpen)}>
+          <button onClick={() => dispatch(toggleSidebar())}>
             {isOpen ? <X size={30} /> : <Menu size={30} />}
           </button>
         </div>
