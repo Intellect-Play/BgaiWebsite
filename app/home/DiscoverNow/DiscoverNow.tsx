@@ -21,13 +21,15 @@ const DiscoverNow: React.FC = () => {
           everything we do{" "}
         </h1>
 
-        <CustomButton
-          title="Discover Now"
-          icon={<ChevronDown size={20} />}
-          width="12rem"
-          expandedWidth="12.5rem"
-          height="3rem"
-        />
+        <div className="mt-[4rem]">
+          <CustomButton
+            title="Discover Now"
+            icon={<ChevronDown size={20} />}
+            width="12rem"
+            expandedWidth="12.5rem"
+            height="3rem"
+          />
+        </div>
       </div>
     </div>
   );
