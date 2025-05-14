@@ -12,6 +12,7 @@ import { RootState } from "@/redux/store";
 import { setSidebarOpen, toggleSidebar } from "@/redux/sidebar/sidebarSlice";
 import { Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
 import Sidebar from "../Sidebar/Sidebar";
+import CustomButton from "@/app/_components/CustomButton";
 
 const Header: React.FC = () => {
   const pathname = usePathname();
@@ -51,12 +52,11 @@ const Header: React.FC = () => {
               className="p-[15px] cursor-pointer"
               onClick={() => dispatch(toggleSidebar())}
             >
-              <Menu size={30} />
+              <Menu color="white" size={30} />
             </button>
           </div>
         </div>
       </div>
-
       <Sidebar />
     </>
   );
