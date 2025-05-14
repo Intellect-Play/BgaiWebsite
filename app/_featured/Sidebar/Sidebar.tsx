@@ -43,7 +43,7 @@ const Sidebar = () => {
           dispatch(setSidebarOpen(false));
         }
       }}
-      className="fixed top-0 right-[0] z-10 h-full w-[350px] bg-[#212325] flex flex-col justify-between pointer-events-auto"
+      className="fixed top-0 right-[0] z-[100] h-full w-[350px] bg-[#212325] flex flex-col justify-between pointer-events-auto"
     >
       <div>
         <div className="flex justify-between pt-[10px] px-[20px]">
