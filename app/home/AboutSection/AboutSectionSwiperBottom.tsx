@@ -28,7 +28,7 @@ const AboutSectionSwiperBottom = () => {
         textContentClass={styles.aboutDreams}
         swiperWrapperClass={styles.aboutSwiperWrapper}
         swiperClass={styles.aboutSwiper}
-        descWidth={styles.aboutTextWith}
+        descWidth={styles.aboutTextWidth}
         direction="flex-row-reverse"
       />
     </div>

@@ -68,7 +68,7 @@ const AboutSectionSwiperTop = () => {
           textContentClass={styles.aboutDreams}
           swiperWrapperClass={styles.aboutSwiperWrapper}
           swiperClass={styles.aboutSwiper}
-          descWidth={styles.aboutTextWith}
+          descWidth={styles.aboutTextWidth}
           spanWord="Dreams"
         />
       </div>

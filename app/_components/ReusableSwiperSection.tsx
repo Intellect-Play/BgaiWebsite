@@ -47,7 +47,7 @@ const AboutSectionSwiper: React.FC<AboutSectionSwiperProps> = ({
   return (
     <div className={`flex ${direction}   justify-between  ${wrapperClass}`}>
       <div
-        className={`flex flex-col mx-auto max-w-[700px] gap-[20px] ${textContentClass}`}
+        className={`flex flex-col mx-auto max-w-[600px] gap-[20px] ${textContentClass}`}
       >
         <h1 className="text-[3rem] text-[#444444]">
           {title} <span className="font-[600]">{spanWord}</span>
