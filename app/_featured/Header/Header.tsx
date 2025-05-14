@@ -1,7 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Logo from "../../_assets/images/peak.png";
-import DarkLogo from "../../_assets/images/secondpeak.png";
 
 import Image from "next/image";
 import { menuItems } from "@/app/constants/MenuItems";
@@ -42,7 +40,7 @@ const Header: React.FC = () => {
         }
         `}
       >
-        <div className="max-w-[1000px] px-[10px] mx-auto w-full flex justify-between items-center">
+        <div className="max-w-[1200px] px-[10px] mx-auto w-full flex justify-between items-center">
           <motion.div
             initial={{ y: scrolled ? 20 : 0, opacity: scrolled ? 0 : 1 }}
             animate={{ y: 0, opacity: isOpen ? 0 : 1 }}
@@ -50,7 +48,9 @@ const Header: React.FC = () => {
             className=" h-[50px]"
           >
             <Image
-              src={scrolled ? DarkLogo : Logo}
+              height={100}
+              width={100}
+              src={scrolled ? "/images/secondpeak.png" : "/images/peak.png"}
               alt="Bgai_Logo"
               className="h-full w-auto object-contain"
             />
