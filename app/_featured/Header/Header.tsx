@@ -34,15 +34,15 @@ const Header: React.FC = () => {
   return (
     <>
       <div
-        className={`w-full z-[10] fixed top-0 left-0  transition-colors duration-300 h-[70px] flex items-center px-[10px], 
+        className={`w-full z-[10] fixed top-0 left-0  transition-colors duration-700 h-[70px] flex items-center px-[10px], 
         ${
           scrolled
-            ? "bg-[#fff] text-[#000] shadow-md"
+            ? "bg-[#fff] text-[#000] shadow-lg"
             : "bg-transparent text-[#fff]"
         }
         `}
       >
-        <div className="max-w-[1000px] mx-auto w-full flex justify-between items-center">
+        <div className="max-w-[1000px] px-[10px] mx-auto w-full flex justify-between items-center">
           <motion.div
             initial={{ y: scrolled ? 20 : 0, opacity: scrolled ? 0 : 1 }}
             animate={{ y: 0, opacity: isOpen ? 0 : 1 }}
