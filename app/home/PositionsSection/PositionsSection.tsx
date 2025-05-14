@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { ChevronRight } from "lucide-react";
+import CustomButton from "@/app/_components/CustomButton";
 
 interface PositionsSectionProps {
   backgroundImage?: string;
@@ -104,6 +105,16 @@ const PositionsSection: React.FC<PositionsSectionProps> = ({
               </div>
             </SwiperSlide>
           </Swiper>
+        </div>
+
+        <div className="flex justify-center items-center mt-[30px]">
+          <CustomButton
+            title="SEE ALL OPENINGS"
+            icon={<ChevronRight size={20} />}
+            width="16rem"
+            expandedWidth="16.5rem"
+            height="3rem"
+          />
         </div>
       </div>
     </div>
