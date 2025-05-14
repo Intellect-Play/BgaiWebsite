@@ -45,7 +45,7 @@ const AboutSectionSwiper: React.FC<AboutSectionSwiperProps> = ({
   direction = "flex-row",
 }) => {
   return (
-    <div className={`flex ${direction}  justify-between  ${wrapperClass}`}>
+    <div className={`flex ${direction}   justify-between  ${wrapperClass}`}>
       <div
         className={`flex flex-col mx-auto max-w-[700px] gap-[20px] ${textContentClass}`}
       >
@@ -63,7 +63,7 @@ const AboutSectionSwiper: React.FC<AboutSectionSwiperProps> = ({
           height={buttonHeight}
         />
       </div>
-      <div className={`max-w-[700px] w-full h-[400px] ${swiperWrapperClass}`}>
+      <div className={`max-w-[600px] w-full h-[400px] ${swiperWrapperClass}`}>
         <Swiper
           className={`w-full h-full ${swiperClass}`}
           modules={[Autoplay]}
