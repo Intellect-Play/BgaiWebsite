@@ -67,7 +67,7 @@ const Header: React.FC = () => {
               >
                 <Link
                   href={item.path}
-                  className={`h-full flex items-center font-[600] hover:bg-[#fff]/10 transition duration-200 ease-linear   py-[18px] px-[18px] px-3 ${
+                  className={`h-full flex items-center font-[600]  transition duration-200 ease-linear   py-[18px] px-[18px] px-3 ${
                     pathname === item.path
                       ? scrolled
                         ? "bg-[#000]/10 text-[#000]"
