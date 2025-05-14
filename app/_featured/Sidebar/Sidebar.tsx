@@ -12,7 +12,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Logo from "../../_assets/images/peak.png";
 import { menuItems } from "@/app/constants/MenuItems";
 import { setSidebarOpen } from "@/redux/sidebar/sidebarSlice";
 import { motion } from "framer-motion";
@@ -50,7 +49,9 @@ const Sidebar = () => {
         <div className="flex justify-between pt-[10px] px-[20px]">
           <div className="flex items-center h-[50px]">
             <Image
-              src={Logo}
+              width={100}
+              height={100}
+              src={"/images/peak.png"}
               alt="Bgai_Logo"
               className="h-full w-auto object-contain"
             />

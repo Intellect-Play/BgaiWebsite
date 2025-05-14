@@ -1,0 +1,21 @@
+@media screen and (max-width: 1030px) {
+  .aboutSectionWrapper {
+    display: flex;
+    flex-direction: column-reverse !important;
+    justify-content: center !important;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .aboutDreams {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
+    text-align: start !important;
+  }
+
+  .aboutTextWidth {
+    max-width: 1000px !important;
+  }
+}
