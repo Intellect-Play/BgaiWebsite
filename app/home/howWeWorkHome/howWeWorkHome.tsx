@@ -7,7 +7,7 @@ import { ChevronRight } from "lucide-react";
 
 const HowWeWorkHome = () => {
   return (
-    <div className="bg-[#F9F9F9] mt-[80px] py-[20px]">
+    <div className="bg-[#F9F9F9] mt-[80px] pt-[20px] pb-[60px] ">
       <div className="flex  flex-col howWeWorkWrap max-w-[1100px] mx-auto  gap-[10px]">
         <h2 className=" text-[3rem] text-[#444444]">
           How We <span className="font-[600]"> Work </span>
