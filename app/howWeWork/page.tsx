@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import PageBannerComponent from "../_components/PageBannerComponent";
 import HowWeWorkCard from "../_components/howWeWork/howWeWorkCard";
 import { howWeWorkItems } from "../constants/howWeWorkItems";
+import ReadyToJoinUs from "../home/ReadyToJoinUs/ReadyToJoinUs";
 
 const HowWeWork = () => {
   return (
@@ -32,6 +34,12 @@ const HowWeWork = () => {
           </div>
         </div>
       </div>
+      <ReadyToJoinUs
+        backgroundImage="/images/guysimage.jpg"
+        title="Ready to join us?"
+        textSize="4rem"
+        textColor="#fff"
+      />
     </div>
   );
 };
