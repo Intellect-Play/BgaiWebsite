@@ -32,7 +32,7 @@ const Header: React.FC = () => {
   return (
     <>
       <div
-        className={`w-full z-[10] fixed top-0 left-0  transition-colors duration-700 h-[70px] flex items-center px-[10px], 
+        className={`w-full z-[99] fixed top-0 left-0    transition-colors duration-700 h-[70px] flex items-center px-[10px], 
         ${
           scrolled
             ? "bg-[#fff] text-[#000] shadow-lg"

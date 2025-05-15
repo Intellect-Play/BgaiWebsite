@@ -2,7 +2,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ChevronUp, Check } from "lucide-react";
 import CustomButton from "@/app/_components/CustomButton";
 
 interface PositionsSectionProps {
@@ -68,10 +68,18 @@ const PositionsSection: React.FC<PositionsSectionProps> = ({
                   code that brings to life game features, items and levels in
                   our games
                 </p>
-
-                <button className="cursor-pointer mt-auto flex flex-col flex-end  font-[600] text-[12px] text-[#444444]">
-                  APPLY
-                </button>
+                <div className="cursor-pointer flex justify-center items-center  mt-auto font-[600] ">
+                  <CustomButton
+                    title="APPLY"
+                    icon={<Check color="#B12028" size={18} />}
+                    width="8rem"
+                    expandedWidth="8.5rem"
+                    height="3rem"
+                    bgColor="#fff"
+                    textColor="#444444"
+                    fontSize="14px"
+                  />
+                </div>
               </div>
             </SwiperSlide>
             <SwiperSlide className="rounded-[5px] px-[10px] py-[20px]  max-h-[330px]">
@@ -89,9 +97,18 @@ const PositionsSection: React.FC<PositionsSectionProps> = ({
                   software
                 </p>
 
-                <button className="cursor-pointer  mt-auto font-[600] text-[12px] text-[#444444]">
-                  APPLY
-                </button>
+                <div className="cursor-pointer flex justify-center items-center  mt-auto font-[600] ">
+                  <CustomButton
+                    title="APPLY"
+                    icon={<Check color="#B12028" size={18} />}
+                    width="8rem"
+                    expandedWidth="8.5rem"
+                    height="3rem"
+                    bgColor="#fff"
+                    textColor="#444444"
+                    fontSize="14px"
+                  />
+                </div>
               </div>
             </SwiperSlide>
             <SwiperSlide className="rounded-[5px] px-[10px] py-[20px]  max-h-[330px]">
