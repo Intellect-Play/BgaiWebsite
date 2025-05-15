@@ -7,7 +7,7 @@ import CustomButton from "@/app/_components/CustomButton";
 
 interface PositionsSectionProps {
   backgroundImage?: string;
-  overlayColor?: string; // opsiyonel, default siyahimsı
+  overlayColor?: string;
 }
 
 const PositionsSection: React.FC<PositionsSectionProps> = ({
