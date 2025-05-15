@@ -24,10 +24,10 @@ const HowWeWorkCard: React.FC<CardProps> = ({
       </div>
 
       <div className="p-4 flex flex-col gap-[5px] flex-1 items-start justify-start py-[40px] px-[30px]">
-        <h2 className="text-[18px] font-[700] text-gray-800 mb-2 text-[#444444] ">
+        <h2 className="text-[20px] font-[700] text-gray-800 mb-2 text-[#444444] ">
           {title}
         </h2>
-        <p className="text-gray-600 text-[#444444] text-[16px] ">
+        <p className="text-gray-600 text-[#444444] text-[17px] ">
           {description}
         </p>
 
