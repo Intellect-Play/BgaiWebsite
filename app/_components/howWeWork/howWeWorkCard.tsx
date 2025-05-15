@@ -18,7 +18,11 @@ const HowWeWorkCard: React.FC<CardProps> = ({
   onReadMoreClick,
 }) => {
   return (
-    <div className="bg-[#fff] cursor-pointer  transition-transform duration-300 hover:-translate-y-[3px] max-w-[22rem] h-[350px] rounded-[4px] overflow-hidden shadow-[0_35px_35px_rgba(0,0,0,0.25)] flex flex-col">
+    <div
+      className={`bg-[#fff] cursor-pointer  transition-transform duration-300 hover:-translate-y-[3px] max-w-[22rem] ${
+        showReadMore ? "h-[350px] " : "h-[320px]"
+      }  rounded-[4px] overflow-hidden shadow-[0_35px_35px_rgba(0,0,0,0.25)] flex flex-col`}
+    >
       <div className="relative w-full h-[150px]">
         <Image src={imageSrc} alt={title} fill className="object-cover" />
       </div>
