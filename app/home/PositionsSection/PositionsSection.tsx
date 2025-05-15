@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { ChevronRight, ChevronUp, Check } from "lucide-react";
 import CustomButton from "@/app/_components/CustomButton";
+import { COLORS } from "@/app/constants/colors/colors";
 
 interface PositionsSectionProps {
   backgroundImage?: string;
@@ -60,7 +61,12 @@ const PositionsSection: React.FC<PositionsSectionProps> = ({
                   Software Engineer, Games
                 </p>
 
-                <div className="w-[70px] h-[3px] bg-[#B12028] mx-auto my-[10px] rounded-full"></div>
+                <div
+                  style={{
+                    backgroundColor: COLORS.primary,
+                  }}
+                  className="w-[70px] h-[3px]  mx-auto my-[10px] rounded-full"
+                ></div>
 
                 <p className="text-[18px]  text-[#444444]">
                   We are looking for a Mobile Software Engineer to join our
@@ -71,7 +77,7 @@ const PositionsSection: React.FC<PositionsSectionProps> = ({
                 <div className="cursor-pointer flex justify-center items-center  mt-auto font-[600] ">
                   <CustomButton
                     title="APPLY"
-                    icon={<Check color="#B12028" size={18} />}
+                    icon={<Check color={COLORS.primary} size={18} />}
                     width="8rem"
                     expandedWidth="8.5rem"
                     height="3rem"
@@ -88,7 +94,12 @@ const PositionsSection: React.FC<PositionsSectionProps> = ({
                   Product Specialist, Games
                 </p>
 
-                <div className="w-[70px] h-[3px] bg-[#B12028] mx-auto my-[10px] rounded-full"></div>
+                <div
+                  style={{
+                    backgroundColor: COLORS.primary,
+                  }}
+                  className="w-[70px] h-[3px] mx-auto my-[10px] rounded-full"
+                ></div>
 
                 <p className="text-[18px]  text-[#444444]">
                   We are looking for a talented Product Specialist who will be
@@ -100,7 +111,7 @@ const PositionsSection: React.FC<PositionsSectionProps> = ({
                 <div className="cursor-pointer flex justify-center items-center  mt-auto font-[600] ">
                   <CustomButton
                     title="APPLY"
-                    icon={<Check color="#B12028" size={18} />}
+                    icon={<Check color={COLORS.primary} size={18} />}
                     width="8rem"
                     expandedWidth="8.5rem"
                     height="3rem"
@@ -116,7 +127,10 @@ const PositionsSection: React.FC<PositionsSectionProps> = ({
                 <p className="text-center text-[28px] max-w-[100px] w-full text-center text-[#444444] font-[600]">
                   See All Openings
                 </p>
-                <div className="bg-[#B12028] px-[10px] py-[10px] rounded-full cursor-pointer">
+                <div
+                  className=" px-[10px] py-[10px] rounded-full cursor-pointer"
+                  style={{ backgroundColor: COLORS.primary }}
+                >
                   <ChevronRight color="white" />
                 </div>
               </div>
