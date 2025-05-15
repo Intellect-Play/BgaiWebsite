@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { ChevronUp } from "lucide-react";
+import { COLORS } from "@/app/constants/colors/colors";
 
 const ScrollToTopButton = () => {
   const [showButton, setShowButton] = useState(false);
@@ -29,7 +30,8 @@ const ScrollToTopButton = () => {
     showButton && (
       <button
         onClick={scrollToTop}
-        className="fixed bottom-[30px] right-[30px] bg-[#B12028] p-3 rounded-[5px] shadow-lg hover:bg-[#900000] transition-all duration-300 z-50 group"
+        className="fixed bottom-[30px] right-[30px]  p-3 rounded-[5px] shadow-lg  transition-all duration-300 z-50 group"
+        style={{ backgroundColor: COLORS.primary }}
       >
         <ChevronUp
           size={24}

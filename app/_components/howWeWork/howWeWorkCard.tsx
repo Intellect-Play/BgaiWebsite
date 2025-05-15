@@ -1,3 +1,4 @@
+import { COLORS } from "@/app/constants/colors/colors";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import React from "react";
@@ -40,7 +41,7 @@ const HowWeWorkCard: React.FC<CardProps> = ({
             onClick={onReadMoreClick}
             className="mt-[10px] flex justify-center items-center font-[600] text-[#444444]  text-[14px] font-bold text-red-700 hover:text-red-900 transition"
           >
-            READ MORE <ChevronRight size={14} color="#B12028" />
+            READ MORE <ChevronRight size={14} color={COLORS.primary} />
           </button>
         )}
       </div>

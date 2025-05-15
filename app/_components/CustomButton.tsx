@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { COLORS } from "../constants/colors/colors";
 
 interface CustomButtonProps {
   title: string;
@@ -18,7 +19,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   width = "12rem",
   expandedWidth = "15rem",
   height = "3rem",
-  bgColor = "#B12028",
+  bgColor = COLORS.primary,
   textColor = "#fff",
   fontSize = "18px",
   onClick,
