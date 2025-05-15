@@ -3,6 +3,7 @@ import React from "react";
 import DiscoverNow from "./DiscoverNow/DiscoverNow";
 import AboutSection from "./AboutSection/AboutSection";
 import PositionsSection from "./PositionsSection/PositionsSection";
+import AboutSectionSwiperLast from "./AboutSection/AboutSectionSwiperLast";
 
 const HomePage: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const HomePage: React.FC = () => {
       <DiscoverNow />
       <AboutSection />
       <PositionsSection backgroundImage="/images/guysimage.jpg" />
+      <AboutSectionSwiperLast />
     </>
   );
 };

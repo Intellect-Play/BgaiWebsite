@@ -21,6 +21,8 @@ interface AboutSectionSwiperProps {
   descWidth: string;
   spanWord?: string;
   direction?: string;
+  additionText?: string;
+  textWidth?: string;
 
   wrapperClass?: string;
   textContentClass?: string;
@@ -43,16 +45,20 @@ const AboutSectionSwiper: React.FC<AboutSectionSwiperProps> = ({
   descWidth = "max-w-[450px]",
   spanWord,
   direction = "flex-row",
+  additionText,
+  textWidth,
 }) => {
   return (
     <div className={`flex ${direction}   justify-between  ${wrapperClass}`}>
       <div
         className={`flex flex-col mx-auto max-w-[600px] gap-[20px] ${textContentClass}`}
       >
-        <h1 className="text-[3rem] text-[#444444]">
-          {title} <span className="font-[600]">{spanWord}</span>
+        <h1 className={`text-[3rem] text-[#444444] ${textWidth}`}>
+          {title} <span className="font-[600]">{spanWord}</span> {additionText}
         </h1>
-        <p className={`max-w-[450px]  text-[18px] text-[#444444] ${descWidth}`}>
+        <p
+          className={`max-w-[450px]  text-[18px] text-[#444444] ${descWidth} `}
+        >
           {description}
         </p>
         <CustomButton
