@@ -38,10 +38,10 @@ const Footer = () => {
             <p>© Peak. All Rights Reserved</p>
           </div>
           <div className="flex gap-[10px] justify-center items-center pb-[20px]">
-            <Instagram size={24} color="#F6F6FB" />
-            <Twitter size={24} color="#F6F6FB" />
-            <Linkedin size={24} color="#F6F6FB" />
-            <Youtube size={24} color="#F6F6FB" />
+            <Instagram size={24} color="#F6F6FB" className="cursor-pointer" />
+            <Twitter size={24} color="#F6F6FB" className="cursor-pointer" />
+            <Linkedin size={24} color="#F6F6FB" className="cursor-pointer" />
+            <Youtube size={24} color="#F6F6FB" className="cursor-pointer" />
           </div>
         </div>
       </div>
