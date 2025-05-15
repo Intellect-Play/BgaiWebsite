@@ -1,6 +1,7 @@
 import React from "react";
 import PageBannerComponent from "../_components/PageBannerComponent";
 import HowWeWorkCard from "../_components/howWeWork/howWeWorkCard";
+import { howWeWorkItems } from "../constants/howWeWorkItems";
 
 const HowWeWork = () => {
   return (
@@ -14,12 +15,21 @@ const HowWeWork = () => {
         textWeight="600"
       />
       <div className="bg-[#F9F9F9] py-[2rem] ">
-        <div className="max-w-[1200px] mx-auto ">
-          <HowWeWorkCard
-            title="Art"
-            description="Playing games is a worldwide party that everyone enjoys,..."
-            imageSrc="/images/swiperImages/swip1.jpg"
-          />
+        <div className="max-w-[1200px] mx-auto  ">
+          <div className="flex justify-center items-center gap-[20px] flex-wrap">
+            {howWeWorkItems &&
+              howWeWorkItems.map((item) => {
+                return (
+                  <div key={item.id}>
+                    <HowWeWorkCard
+                      title={item.title}
+                      description={item.desc}
+                      imageSrc={item.image}
+                    />
+                  </div>
+                );
+              })}
+          </div>
         </div>
       </div>
     </div>
