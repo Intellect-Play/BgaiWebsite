@@ -25,8 +25,10 @@ const Footer = () => {
               </h2>
               <ul className="flex flex-col gap-[2px] text-[14px] text-[#A3A4A8]">
                 {section.links.map((link, j) => (
-                  <li key={j}>
-                    <Link href={link.path}>{link.label}</Link>
+                  <li key={j} className=" hover:text-[#fff] duration-300">
+                    <Link href={link.path} className="">
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -38,7 +40,7 @@ const Footer = () => {
             <p>© Peak. All Rights Reserved</p>
           </div>
           <div className="flex gap-[10px] justify-center items-center pb-[20px]">
-            <Instagram size={24} color="#F6F6FB" className="cursor-pointer" />
+            <Instagram size={24} color="#F6F6FB" className="cursor-pointer " />
             <Twitter size={24} color="#F6F6FB" className="cursor-pointer" />
             <Linkedin size={24} color="#F6F6FB" className="cursor-pointer" />
             <Youtube size={24} color="#F6F6FB" className="cursor-pointer" />
