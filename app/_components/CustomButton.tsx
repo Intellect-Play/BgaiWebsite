@@ -6,6 +6,9 @@ interface CustomButtonProps {
   width?: string;
   expandedWidth?: string;
   height?: string;
+  bgColor?: string;
+  textColor?: string;
+  fontSize?: string;
   onClick?: () => void;
 }
 
@@ -15,6 +18,9 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   width = "12rem",
   expandedWidth = "15rem",
   height = "3rem",
+  bgColor = "#B12028",
+  textColor = "#fff",
+  fontSize = "18px",
   onClick,
 }) => {
   const [hovered, setHovered] = useState(false);
@@ -24,10 +30,13 @@ const CustomButton: React.FC<CustomButtonProps> = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onClick={onClick}
-      className="group flex items-center gap-2 text-[18px] font-[700] cursor-pointer rounded-full text-[#fff] bg-[#B12028] hover:bg-gray-300 transition-all duration-300 overflow-hidden pl-[40px]"
+      className="group flex items-center gap-2  font-[700] cursor-pointer rounded-full  hover:bg-gray-300 transition-all duration-300 overflow-hidden pl-[40px]"
       style={{
         width: hovered ? expandedWidth : width,
         height,
+        backgroundColor: bgColor,
+        fontSize: fontSize,
+        color: textColor,
       }}
     >
       <span className="flex items-center text-center gap-2">{title}</span>
