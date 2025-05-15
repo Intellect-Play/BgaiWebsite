@@ -11,7 +11,7 @@ const AboutSectionSwiperLast = () => {
         <AboutSectionSwiper
           title="We are a"
           description="The products we build are ever-evolving and continue to reach more and more users all around the world. Operating on a global scale requires focus, dedication and a great team."
-          buttonTitle="READ OUR STORY"
+          buttonTitle="SEE OUR GAMES"
           buttonWidth="15rem"
           buttonExpandedWidth="15.5rem"
           buttonIcon={<ChevronRight size={20} />}
