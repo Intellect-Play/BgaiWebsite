@@ -4,6 +4,7 @@ import React from "react";
 import AboutBanner from "./AboutBanner";
 import WhatWeValue from "./WhatWeValue";
 import OurJourney from "./OurJourney";
+import GoingTowards from "./GoingTowards";
 
 const About = () => {
   return (
@@ -11,6 +12,7 @@ const About = () => {
       <AboutBanner />
       <WhatWeValue />
       <OurJourney />
+      <GoingTowards />
     </div>
   );
 };
