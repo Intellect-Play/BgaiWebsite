@@ -34,3 +34,9 @@ export const aboutPageSwiperItems = [
   { id: 2, image: "/images/aboutImages/journey2.jpg", alt: "Team working" },
   { id: 3, image: "/images/aboutImages/journey3.jpg", alt: "Team working" },
 ];
+
+export const lifeAtPeakPageSwiperItems = [
+  { id: 1, image: "/images/lifeAtPeakImages/life1.jpg", alt: "Team working" },
+  { id: 2, image: "/images/lifeAtPeakImages/life2.jpg", alt: "Team working" },
+  { id: 3, image: "/images/lifeAtPeakImages/life3.jpg", alt: "Team working" },
+];
