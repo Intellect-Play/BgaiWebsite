@@ -11,6 +11,7 @@ interface GameCardProps {
   link?: string;
   googleLink?: string;
   appstoreLink?: string;
+  direction?: string;
 }
 
 const GameCard: React.FC<GameCardProps> = ({
@@ -20,6 +21,7 @@ const GameCard: React.FC<GameCardProps> = ({
   link,
   googleLink,
   appstoreLink,
+  direction,
 }) => {
   const router = useRouter();
 
@@ -34,7 +36,7 @@ const GameCard: React.FC<GameCardProps> = ({
   };
 
   return (
-    <div className="flex gamesJustify gap-[2rem] py-[5rem]">
+    <div className={`flex ${direction} gamesJustify gap-[2rem] py-[5rem]`}>
       <div className="flex-shrink-0 w-[400px] md:w-[300px] lg:w-[350px]">
         <Image
           height={800}
