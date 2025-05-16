@@ -88,7 +88,7 @@ const PositionsSection: React.FC<PositionsSectionProps> = ({
                 </div>
               </div>
             </SwiperSlide>
-            <SwiperSlide className="rounded-[5px] px-[10px] py-[20px]  max-h-[330px]">
+            <SwiperSlide className=" rounded-[5px] px-[10px] py-[20px]  max-h-[330px]">
               <div className="flex flex-col h-full gap-[5px]">
                 <p className="text-[28px] w-full text-center text-[#444444] font-[600]">
                   Product Specialist, Games
