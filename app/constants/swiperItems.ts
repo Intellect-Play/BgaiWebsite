@@ -28,3 +28,9 @@ export const lastSwiperItems = [
   { id: 3, image: "/images/swiperImages/swip9.jpg", alt: "Office vibes" },
   { id: 4, image: "/images/swiperImages/swip10.jpg", alt: "Office vibes" },
 ];
+
+export const aboutPageSwiperItems = [
+  { id: 1, image: "/images/aboutImages/journey1.jpg", alt: "Team working" },
+  { id: 2, image: "/images/aboutImages/journey2.jpg", alt: "Team working" },
+  { id: 3, image: "/images/aboutImages/journey3.jpg", alt: "Team working" },
+];
