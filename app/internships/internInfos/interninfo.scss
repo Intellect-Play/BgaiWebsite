@@ -1,0 +1,50 @@
+.intern-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.info-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .info-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #b12028;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+
+  .info-list {
+    list-style-type: square;
+    padding-left: 20px;
+
+    li {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 10px;
+      line-height: 1.5;
+
+      &::marker {
+        color: #b12028;
+      }
+    }
+
+    .link-text {
+      color: #b12028;
+      font-weight: 500;
+    }
+  }
+}
