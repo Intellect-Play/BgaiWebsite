@@ -1,0 +1,60 @@
+.fun-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.fun-title {
+  font-size: 36px;
+  color: #333;
+  font-weight: 400;
+  margin-bottom: 20px;
+
+  span {
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 1032px) {
+  .fun-title {
+    text-align: center;
+  }
+}
+
+.fun-swiper {
+  width: 100%;
+
+  .swiper-slide {
+    position: relative;
+
+    .fun-image-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 5 / 2.1; // Otomatik responsive yükseklik
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .fun-caption {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 20px;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.6),
+          transparent 70%
+        );
+        color: #fff;
+        font-weight: 600;
+        font-size: 16px;
+        z-index: 2;
+      }
+    }
+  }
+}
