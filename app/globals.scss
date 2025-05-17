@@ -1,6 +1,8 @@
-@import "tailwindcss/preflight";
-@tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import "tailwindcss/preflight";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   margin: 0;

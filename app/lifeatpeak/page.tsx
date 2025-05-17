@@ -5,6 +5,7 @@ import AboutSectionSwiper from "../_components/ReusableSwiperSection";
 import styles from "../home/AboutSection/AboutSection.module.scss";
 import { lifeAtPeakPageSwiperItems } from "../constants/swiperItems";
 import ReadyToJoinUs from "../home/ReadyToJoinUs/ReadyToJoinUs";
+import Focus from "./Focus/Focus";
 
 const page = () => {
   return (
@@ -33,6 +34,8 @@ const page = () => {
 The Peak team has already touched the lives of countless millions of people around the world. Just imagine what we can do with you aboard."
         />
       </div>
+
+      <Focus />
 
       <ReadyToJoinUs
         backgroundImage="/images/guysimage.jpg"
