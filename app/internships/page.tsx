@@ -21,7 +21,7 @@ const page = () => {
       <Boxes />
       <InternSwiper />
       <InternInfo />
-      <div className="w-full max-w-[1200px] mx-auto">
+      <div className="w-full max-w-[1200px] mx-auto py-[20px]">
         <Image
           src="/images/internImages/internfooter.png"
           alt="intern-footer"
