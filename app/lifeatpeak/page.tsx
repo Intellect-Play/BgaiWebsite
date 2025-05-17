@@ -6,6 +6,7 @@ import styles from "../home/AboutSection/AboutSection.module.scss";
 import { lifeAtPeakPageSwiperItems } from "../constants/swiperItems";
 import ReadyToJoinUs from "../home/ReadyToJoinUs/ReadyToJoinUs";
 import Focus from "./Focus/Focus";
+import Accardion from "./Accardion/Accardion";
 
 const page = () => {
   return (
@@ -36,6 +37,8 @@ The Peak team has already touched the lives of countless millions of people arou
       </div>
 
       <Focus />
+
+      <Accardion />
 
       <ReadyToJoinUs
         backgroundImage="/images/guysimage.jpg"
