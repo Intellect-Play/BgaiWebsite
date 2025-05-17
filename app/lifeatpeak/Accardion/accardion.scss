@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 40px 20px;
+  padding: 40px 10px;
   max-width: 1200px;
   margin: 0 auto;
   gap: 40px;
@@ -56,8 +56,8 @@
     display: flex;
     justify-content: space-between;
     font-weight: 600;
-    font-size: 16px;
-    color: #222;
+    font-size: 22px;
+    color: #444444;
 
     .icon {
       color: #b12028;
@@ -67,7 +67,7 @@
 
   .accordion-content {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 16px;
     color: #555;
   }
 }
