@@ -1,0 +1,35 @@
+.internship-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.internship-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  max-width: 500px;
+  flex: 1 1 450px;
+
+  .title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #b12028;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 17px;
+    color: #444;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+
+  .red-text {
+    color: #b12028;
+    font-weight: 500;
+  }
+}
