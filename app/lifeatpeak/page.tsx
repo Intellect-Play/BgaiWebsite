@@ -7,6 +7,7 @@ import { lifeAtPeakPageSwiperItems } from "../constants/swiperItems";
 import ReadyToJoinUs from "../home/ReadyToJoinUs/ReadyToJoinUs";
 import Focus from "./Focus/Focus";
 import Accardion from "./Accardion/Accardion";
+import FunTogether from "./FunTogether/FunTogether";
 
 const page = () => {
   return (
@@ -39,6 +40,8 @@ The Peak team has already touched the lives of countless millions of people arou
       <Focus />
 
       <Accardion />
+
+      <FunTogether />
 
       <ReadyToJoinUs
         backgroundImage="/images/guysimage.jpg"
