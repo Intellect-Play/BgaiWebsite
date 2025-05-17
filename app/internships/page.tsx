@@ -1,3 +1,4 @@
+"use client";
 import PageBannerComponent from "@/app/_components/PageBannerComponent";
 import React from "react";
 import Description from "./description/Description";
@@ -5,6 +6,7 @@ import Boxes from "./boxes/Boxes";
 import InternSwiper from "./internSwiper/InternSwiper";
 import InternInfo from "./internInfos/internInfo";
 import Image from "next/image";
+import ReadyToJoinUs from "../home/ReadyToJoinUs/ReadyToJoinUs";
 
 const page = () => {
   return (
@@ -31,6 +33,12 @@ const page = () => {
           className="w-full h-auto"
         />
       </div>
+      <ReadyToJoinUs
+        backgroundImage="/images/guysimage.jpg"
+        title="Start shaping your future!"
+        textSize="4rem"
+        textColor="#fff"
+      />
     </div>
   );
 };
