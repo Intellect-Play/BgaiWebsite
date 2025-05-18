@@ -68,7 +68,7 @@ const Sidebar = () => {
               <li key={item.path}>
                 <Link
                   href={item.path}
-                  className={`h-full w-full flex items-center px-[20px] py-[10px] ${
+                  className={`h-full w-full flex items-center px-[20px] py-[10px] hover:bg-[#363739] duration-300 ${
                     pathname === item.path ? "bg-[#363739] rounded-md" : ""
                   }`}
                 >
