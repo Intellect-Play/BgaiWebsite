@@ -1,0 +1,77 @@
+@media screen and (max-width: 1150px) {
+  .jobsCenter {
+    text-align: center;
+  }
+
+  .jobsParagraph {
+    padding: 0 50px;
+  }
+}
+.peak-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0px 20px;
+  gap: 30px;
+
+  .peak-left {
+    flex: 1 1 55%;
+
+    h2 {
+      font-size: 40px;
+      font-weight: 300;
+      color: #333;
+
+      strong {
+        font-weight: 700;
+      }
+    }
+  }
+
+  .peak-right {
+    flex: 1 1 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    p {
+      font-size: 20px;
+      color: #333;
+    }
+
+    .explore-btn {
+      background-color: #b12028;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+      width: fit-content;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background-color: #941a22;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+
+    .peak-left,
+    .peak-right {
+      flex: 1 1 100%;
+    }
+
+    .peak-left h2 {
+      font-size: 28px;
+    }
+  }
+}
