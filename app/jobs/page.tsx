@@ -34,7 +34,7 @@ const page = () => {
           </p>
         </div>
 
-        <div className="flex py-[2rem] flex-wrap max-w-[1200px] mx-auto gap-[20px] justify-center items-center">
+        <div className="flex py-[2rem] flex-wrap max-w-[1200px] mx-auto gap-[30px] justify-center items-center">
           {jobItems &&
             jobItems.map((item, idx) => {
               return (
