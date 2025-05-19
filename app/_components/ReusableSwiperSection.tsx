@@ -1,7 +1,6 @@
 // components/AboutSectionSwiper.tsx
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -98,9 +97,7 @@ const AboutSectionSwiper: React.FC<AboutSectionSwiperProps> = ({
       >
         <Swiper
           className={`w-full h-full ${swiperClass}`}
-          modules={[Autoplay]}
           pagination={{ clickable: true }}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
         >
           {swiperItems.map((item) => (
             <SwiperSlide key={item.id} className="relative w-full h-full">
