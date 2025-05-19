@@ -6,7 +6,7 @@ import React from "react";
 interface CardProps {
   imageSrc: string;
   title: string;
-  description: string;
+  description?: string;
   showReadMore?: boolean;
   onReadMoreClick?: () => void;
 }
@@ -21,7 +21,7 @@ const Explore: React.FC<CardProps> = ({
     <div className=" ">
       <div>
         <div
-          className={`bg-[#fff]  cursor-pointer  transition-transform duration-300 hover:-translate-y-[3px] w-[22rem] max-w-[22rem] 
+          className={`bg-[#fff] max-h-[15rem] h-[15rem]  cursor-pointer  transition-transform duration-300 hover:-translate-y-[3px] w-[22rem] max-w-[22rem] 
      rounded-[4px] overflow-hidden shadow-[0_35px_35px_rgba(0,0,0,0.25)] flex flex-col`}
         >
           <div className="relative w-full h-[150px]">
@@ -33,9 +33,11 @@ const Explore: React.FC<CardProps> = ({
               {title}
             </h2>
 
-            <p className="flex justify-center items-center text-[#444444]">
-              <ChevronRight size={20} color={COLORS.primary} /> {description}
-            </p>
+            {description && (
+              <p className="flex justify-center items-center text-[#444444]">
+                <ChevronRight size={20} color={COLORS.primary} /> {description}
+              </p>
+            )}
           </div>
         </div>
       </div>
