@@ -41,7 +41,7 @@ const page = () => {
                 <Explore
                   key={item.id}
                   title={item.title}
-                  description={item.desc}
+                  description={item?.desc}
                   imageSrc={item.image}
                 />
               );
