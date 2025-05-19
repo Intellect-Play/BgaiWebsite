@@ -6,7 +6,6 @@ import "./funtogether.scss";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Autoplay } from "swiper/modules";
 
 const slides = [
   {
@@ -27,11 +26,7 @@ const FunTogether = () => {
         We have <span>fun</span> together
       </h2>
 
-      <Swiper
-        modules={[Autoplay]}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
-        className="fun-swiper"
-      >
+      <Swiper className="fun-swiper">
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div className="fun-image-wrapper">
