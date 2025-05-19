@@ -18,7 +18,7 @@ const HowWeWork = () => {
       />
       <div className="bg-[#F9F9F9] py-[2rem] ">
         <div className="max-w-[1200px] mx-auto  ">
-          <div className="flex justify-center items-center gap-[20px] flex-wrap">
+          <div className="flex justify-center items-center gap-[30px] flex-wrap">
             {howWeWorkItems &&
               howWeWorkItems.map((item) => {
                 return (
