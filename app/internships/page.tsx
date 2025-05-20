@@ -4,7 +4,7 @@ import React from "react";
 import Description from "./description/Description";
 import Boxes from "./boxes/Boxes";
 import InternSwiper from "./internSwiper/InternSwiper";
-import InternInfo from "./internInfos/internInfo";
+// import InternInfo from "./internInfos/internInfo";
 import Image from "next/image";
 import ReadyToJoinUs from "../home/ReadyToJoinUs/ReadyToJoinUs";
 
@@ -19,7 +19,7 @@ const page = () => {
         backgroundImage="/images/lifeAtPeak.jpg"
         height="65vh"
       />
-      <Description />
+      {/* <Description />
       <Boxes />
       <InternSwiper />
       <InternInfo />
@@ -32,7 +32,7 @@ const page = () => {
           sizes="100vw"
           className="w-full h-auto"
         />
-      </div>
+      </div> */}
       <ReadyToJoinUs
         backgroundImage="/images/guysimage.jpg"
         title="Start shaping your future!"
