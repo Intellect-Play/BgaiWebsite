@@ -3,6 +3,7 @@ import React from "react";
 import PageBannerComponent from "../_components/PageBannerComponent";
 import GamesSection from "./gamesSection/GamesSection";
 import ReadyToJoinUs from "../home/ReadyToJoinUs/ReadyToJoinUs";
+import NewGamesSection from "./newGamesSection/NewGamesSection";
 
 const page = () => {
   return (
@@ -14,7 +15,8 @@ const page = () => {
         textWeight="600"
         backgroundImage="/images/games.jpg"
       />
-      <GamesSection />
+      {/* <GamesSection /> */}
+      <NewGamesSection />
       <ReadyToJoinUs
         backgroundImage="/images/guysimage.jpg"
         title="Ready to join us?"

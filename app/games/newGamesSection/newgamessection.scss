@@ -1,0 +1,59 @@
+.games-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.game-card {
+  background: white;
+  width: 300px; // ✅ Sabit genişlik
+  height: 420px; // ✅ Sabit yükseklik
+  border-radius: 25px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .category {
+    font-size: 14px;
+    color: #6c6c6c;
+  }
+
+  .title {
+    font-size: 20px;
+    color: #111;
+    font-weight: 600;
+    margin: 10px 0 20px 0;
+  }
+
+  img {
+    width: 260px; // ✅ Sabit görsel boyutu
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top: auto; // Görseli en alta çeker
+  }
+}
+
+.store-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+
+  .store-btn {
+    width: 120px !important;
+    height: 40px !important;
+    object-fit: contain;
+  }
+}
