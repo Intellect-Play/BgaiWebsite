@@ -37,12 +37,12 @@
   }
 
   img {
-    width: 260px; // ✅ Sabit görsel boyutu
-    height: 300px;
+    width: 260px !important; // ✅ Sabit görsel boyutu
+    height: 500px !important;
     object-fit: cover;
     border-radius: 20px;
     margin: 0 auto;
-    margin-top: auto; // Görseli en alta çeker
+    margin-top: auto;
   }
 }
 

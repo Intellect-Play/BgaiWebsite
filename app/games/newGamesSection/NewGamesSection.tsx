@@ -22,7 +22,6 @@ const NewGamesSection = () => {
   };
 
   useEffect(() => {
-    // 🔥 Axios ile veriyi çekiyoruz
     axios
       .get("http://localhost:3001/api/bgaiv1/games")
       .then((res) => {
