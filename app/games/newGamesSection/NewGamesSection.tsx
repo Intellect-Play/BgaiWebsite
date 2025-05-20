@@ -1,48 +1,82 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./newgamessection.scss";
 import Image from "next/image";
+import axios from "axios";
+
+type Game = {
+  _id: string;
+  title: string;
+  category: string;
+  image: string;
+  appStoreLink: string;
+  googlePlayLink: string;
+};
 
 const NewGamesSection = () => {
-  const handleGoogleClick = () => {
-    window.open(
-      "https://play.google.com/store/apps/details?id=com.example.app",
-      "_blank"
-    );
+  const [games, setGames] = useState<Game[]>([]);
+
+  const handleStoreClick = (link: string) => {
+    if (link) window.open(link, "_blank");
   };
 
-  const handleAppstoreClick = () => {
-    window.open("https://apps.apple.com/app/id000000000", "_blank");
-  };
+  useEffect(() => {
+    // 🔥 Axios ile veriyi çekiyoruz
+    axios
+      .get("http://localhost:3001/api/bgaiv1/games")
+      .then((res) => {
+        setGames(res.data.games);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <div>
       <div className="games-grid">
-        <div className="game-card ">
-          <p className="category">Puzzle</p>
-          <h3 className="title">Seat Away</h3>
-          <img src="/images/gameImages/toyblast.png" alt="Seat Away" />
+        {games.map((game) => (
+          <div className="game-card" key={game._id}>
+            <p className="category">{game.category}</p>
+            <h3 className="title">{game.title}</h3>
+            <img
+              src={
+                game.image && game.image.startsWith("http")
+                  ? game.image
+                  : game.image
+                  ? `http://localhost:3001${game.image}`
+                  : "/images/defaultGameImage.png"
+              }
+              alt={game.title}
+              style={{
+                width: 160,
+                height: 160,
+                objectFit: "cover",
+                borderRadius: 20,
+              }}
+            />
 
-          <div className="store-buttons">
-            <Image
-              alt="google"
-              src="/images/googledownload.png"
-              width={120}
-              height={40}
-              onClick={handleGoogleClick}
-              className="cursor-pointer store-btn"
-            />
-            <Image
-              alt="appstore"
-              src="/images/appstoredownload.png"
-              width={120}
-              height={40}
-              onClick={handleAppstoreClick}
-              className="cursor-pointer store-btn"
-            />
+            <div className="store-buttons">
+              <Image
+                alt="google"
+                src="/images/googledownload.png"
+                width={120}
+                height={40}
+                onClick={() => handleStoreClick(game.googlePlayLink)}
+                className="cursor-pointer store-btn"
+              />
+              <Image
+                alt="appstore"
+                src="/images/appstoredownload.png"
+                width={120}
+                height={40}
+                onClick={() => handleStoreClick(game.appStoreLink)}
+                className="cursor-pointer store-btn"
+              />
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );
