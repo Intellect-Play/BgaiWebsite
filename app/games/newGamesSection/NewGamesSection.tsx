@@ -19,7 +19,7 @@ const NewGamesSection = () => {
   return (
     <div>
       <div className="games-grid">
-        <div className="game-card">
+        <div className="game-card ">
           <p className="category">Puzzle</p>
           <h3 className="title">Seat Away</h3>
           <img src="/images/gameImages/toyblast.png" alt="Seat Away" />
