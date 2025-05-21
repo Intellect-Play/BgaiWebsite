@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import "./AdminSidebar.scss";
 import { deleteCookie } from "cookies-next/client";
+import { useRouter } from "next/navigation";
 
 const links = [
   { name: "Games", href: "/admin/dashboard/games" },
@@ -11,10 +12,11 @@ const links = [
 
 export default function AdminSidebar() {
   const [open, setOpen] = useState(true);
+  const router = useRouter();
 
   const handleLogout = () => {
     deleteCookie("admin_token");
-    window.location.reload();
+    router.replace("/home");
   };
 
   return (

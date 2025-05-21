@@ -3,7 +3,7 @@ const { ErrorHandler } = require("../utils/ErrorHandler");
 
 const getAllGames = async (req, res, next) => {
   try {
-    let { page = 1, limit = 10, search = "" } = req.query;
+    let { page = 1, limit = 100, search = "" } = req.query;
     page = parseInt(page);
     limit = parseInt(limit);
 
