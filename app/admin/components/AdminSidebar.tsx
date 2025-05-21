@@ -19,6 +19,10 @@ export default function AdminSidebar() {
     router.replace("/home");
   };
 
+  const handleHome = () => {
+    router.replace("/home");
+  };
+
   return (
     <>
       <button className="sidebar-toggle" onClick={() => setOpen(!open)}>
@@ -37,6 +41,10 @@ export default function AdminSidebar() {
             </Link>
           ))}
         </nav>
+
+        <button className="admin-sidebar-home" onClick={handleHome}>
+          Return Home
+        </button>
         <button className="admin-sidebar-logout" onClick={handleLogout}>
           Logout
         </button>

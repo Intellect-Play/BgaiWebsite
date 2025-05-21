@@ -107,7 +107,7 @@
 .admin-sidebar-logout {
   display: block;
   width: 80%;
-  margin: 32px auto 16px auto;
+  margin: 16px auto 16px auto;
   padding: 12px 0;
   border: none;
   border-radius: 8px;
@@ -119,6 +119,25 @@
   box-shadow: 0 2px 10px rgba(180, 40, 40, 0.1);
   transition: background 0.18s;
   &:hover {
-    background: linear-gradient(120deg, #c0392b 0%, #e74c3c 100%);
+    background: linear-gradient(120deg, #ff6b61 0%, #d63031 100%);
+  }
+}
+
+.admin-sidebar-home {
+  display: block;
+  width: 80%;
+  margin: 10px auto 16px auto;
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(120deg, hsl(226, 86%, 29%) 40%, #89261b 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(180, 40, 40, 0.1);
+  transition: background 0.18s;
+  &:hover {
+    background: linear-gradient(120deg, #6366f1 40%, #4338ca 100%);
   }
 }
