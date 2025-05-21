@@ -5,8 +5,8 @@ import "./AdminSidebar.scss";
 import { deleteCookie } from "cookies-next/client";
 
 const links = [
-  { name: "Games", href: "/admin/games" },
-  { name: "Jobs", href: "/admin/jobs" },
+  { name: "Games", href: "/admin/dashboard/games" },
+  { name: "Jobs", href: "/admin/dashboard/jobs" },
 ];
 
 export default function AdminSidebar() {
