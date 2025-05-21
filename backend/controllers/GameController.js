@@ -3,11 +3,34 @@ const { ErrorHandler } = require("../utils/ErrorHandler");
 
 const getAllGames = async (req, res, next) => {
   try {
-    const games = await Game.find();
-    if (!games.length) {
-      return next(new ErrorHandler("No games found", 404));
-    }
-    res.status(200).json({ success: true, games });
+    let { page = 1, limit = 10, search = "" } = req.query;
+    page = parseInt(page);
+    limit = parseInt(limit);
+
+    const query = search
+      ? {
+          $or: [
+            { title: { $regex: search, $options: "i" } },
+            { category: { $regex: search, $options: "i" } },
+          ],
+        }
+      : {};
+
+    const games = await Game.find(query)
+      .skip((page - 1) * limit)
+      .limit(limit)
+      .sort({ createdAt: -1 });
+
+    const total = await Game.countDocuments(query);
+
+    res.status(200).json({
+      success: true,
+      games,
+      page,
+      limit,
+      total,
+      totalPages: Math.ceil(total / limit),
+    });
   } catch (error) {
     next(error);
   }
