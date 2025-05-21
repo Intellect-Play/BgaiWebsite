@@ -90,7 +90,7 @@ export default function GamesPage() {
   // Delete
   const handleDelete = async (id: string | undefined) => {
     if (!id) return;
-    if (window.confirm("Silmek istediğine emin misin?")) {
+    if (window.confirm("Are you sure to delete?")) {
       await axios.delete(`http://localhost:3001/api/bgaiv1/games/${id}`);
       fetchGames();
     }
@@ -99,6 +99,11 @@ export default function GamesPage() {
   // Modal submit
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (modalMode === "add" && !imageFile) {
+      alert("Please select an image");
+      return;
+    }
+
     const formData = new FormData();
     formData.append("title", form.title);
     formData.append("category", form.category);
@@ -194,7 +199,7 @@ export default function GamesPage() {
                             ? game.image
                             : game.image
                             ? `http://localhost:3001${game.image}`
-                            : "/images/defaultGameImage.png"
+                            : "/images/noimage.jpeg"
                         }
                         alt={game.title}
                         className="games-table-img"
