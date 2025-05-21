@@ -305,7 +305,95 @@ export default function GamesPage() {
               </button>
               <h2>{modalMode === "add" ? "Add Game" : "Edit Game"}</h2>
               <form onSubmit={handleSubmit} className="edit-form">
-                {/* inputlar vs. */}
+                <label>
+                  Title:
+                  <input
+                    type="text"
+                    value={form.title}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, title: e.target.value }))
+                    }
+                    required
+                  />
+                </label>
+
+                <label>
+                  Category:
+                  <input
+                    type="text"
+                    value={form.category}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, category: e.target.value }))
+                    }
+                    required
+                  />
+                </label>
+
+                <label>
+                  App Store Link:
+                  <input
+                    type="text"
+                    value={form.appStoreLink}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, appStoreLink: e.target.value }))
+                    }
+                    required
+                  />
+                </label>
+
+                <label>
+                  Google Play Link:
+                  <input
+                    type="text"
+                    value={form.googlePlayLink}
+                    onChange={(e) =>
+                      setForm((f) => ({
+                        ...f,
+                        googlePlayLink: e.target.value,
+                      }))
+                    }
+                    required
+                  />
+                </label>
+
+                <label>
+                  Image:
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageChange}
+                  />
+                  {(imagePreview || form.image) && (
+                    <img
+                      src={
+                        imagePreview ||
+                        (form.image && form.image.startsWith("http")
+                          ? form.image
+                          : form.image
+                          ? `http://localhost:3001${form.image}`
+                          : "/images/defaultGameImage.png")
+                      }
+                      alt="preview"
+                      style={{
+                        marginTop: 10,
+                        borderRadius: 10,
+                        width: 80,
+                        height: 80,
+                        objectFit: "cover",
+                        border: "1.5px solid #e6e6ee",
+                        background: "#f5f7fa",
+                      }}
+                    />
+                  )}
+                </label>
+
+                <button
+                  type="submit"
+                  className="games-action-btn edit"
+                  style={{ marginTop: 14 }}
+                >
+                  {modalMode === "add" ? "Add" : "Update"}
+                </button>
               </form>
             </div>
           </div>
