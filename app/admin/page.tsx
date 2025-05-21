@@ -17,7 +17,7 @@ const AdminPage = () => {
   useEffect(() => {
     const token = getCookie("admin_token");
     if (token) {
-      router.replace("/admin/dashboard");
+      router.replace("/admin/dashboard/games");
     }
   }, [router]);
 
