@@ -33,9 +33,9 @@ const AdminPage = () => {
         }
       );
       setCookie("admin_token", res.data.token, { maxAge: 60 * 60 * 2 });
-      router.push("/admin/dashboard");
+      router.push("/admin/dashboard/games");
     } catch (err) {
-      setError("Email ya da şifre yanlış!");
+      setError("Email or password is wrong!");
     }
   };
 

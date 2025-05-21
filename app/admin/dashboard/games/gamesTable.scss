@@ -1,3 +1,11 @@
+.page-center {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6faff;
+}
+
 .games-table-wrapper {
   background: #fff;
   border-radius: 18px;
@@ -170,5 +178,45 @@
         border-color: #818cf8;
       }
     }
+  }
+}
+.games-action-btn {
+  padding: 6px 15px;
+  margin: 0 3px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.97rem;
+  cursor: pointer;
+  transition: background 0.15s;
+  &.edit {
+    background: #34d399;
+    color: #fff;
+    &:hover {
+      background: #059669;
+    }
+  }
+  &.delete {
+    background: #ef4444;
+    color: #fff;
+    &:hover {
+      background: #b91c1c;
+    }
+  }
+}
+
+.games-add-btn {
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  margin-right: 10px;
+  font-weight: 600;
+  font-size: 1.08rem;
+  cursor: pointer;
+  transition: background 0.16s;
+  &:hover {
+    background: #312e81;
   }
 }
