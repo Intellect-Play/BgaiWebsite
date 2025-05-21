@@ -5,6 +5,7 @@ const cors = require("cors");
 const path = require("path");
 const router = express.Router();
 const connection = require("./db/db");
+const adminRoutes = require("./routes/adminRoutes");
 app.use(express.static(__dirname));
 
 connection();
@@ -24,6 +25,7 @@ app.use(
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use("/api/bgaiv1/games", gameRouter);
+app.use("/api/bgaiv1/admin", adminRoutes);
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`Listening on port ${port}`));

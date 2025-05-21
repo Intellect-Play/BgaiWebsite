@@ -9,12 +9,14 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const pathname = usePathname();
+  const isAdmin = pathname.startsWith("/admin");
   return (
     <>
       <div className="">
-        <Header />
+        {!isAdmin && <Header />}
         {children}
-        <Footer />
+        {!isAdmin && <Footer />}
         <ScrollToTopButton />
       </div>
     </>
