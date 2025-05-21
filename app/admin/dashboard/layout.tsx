@@ -22,9 +22,18 @@ export default function DashboardLayout({
   }, [pathname, router]);
 
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex", minHeight: "100vh" }}>
       <AdminSidebar />
-      <main style={{ flex: 1 }}>{children}</main>
+      <main
+        style={{
+          flex: 1,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {children}
+      </main>
     </div>
   );
 }

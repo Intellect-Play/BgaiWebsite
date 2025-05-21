@@ -11,7 +11,7 @@ const links = [
 ];
 
 export default function AdminSidebar() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const router = useRouter();
 
   const handleLogout = () => {
