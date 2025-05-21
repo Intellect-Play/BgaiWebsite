@@ -10,7 +10,7 @@
 
 .game-card {
   background: white;
-  width: 300px; // ✅ Sabit genişlik
+  width: 350px; // ✅ Sabit genişlik
   height: 450px; // ✅ Sabit yükseklik
   border-radius: 25px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
@@ -48,7 +48,7 @@
 
 .store-buttons {
   display: flex;
-  gap: 10px;
+  gap: 5px;
   margin-top: 20px;
 
   .store-btn {

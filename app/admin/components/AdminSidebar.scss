@@ -1,0 +1,118 @@
+.admin-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 240px;
+  background: #23272f;
+  color: #fff;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.09);
+  padding-top: 32px;
+  z-index: 100;
+  transform: translateX(-250px);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  .admin-sidebar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #31374a;
+    margin: 0 18px;
+    letter-spacing: 1px;
+  }
+
+  .admin-sidebar-links {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .admin-sidebar-link {
+    display: block;
+    padding: 12px 28px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 1.05rem;
+    transition: background 0.16s;
+    &:hover,
+    &.active {
+      background: #323951;
+      color: #e6e6ff;
+    }
+  }
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 200;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #23272f;
+  color: #fff;
+  font-size: 1.4rem;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 800px) {
+    display: none;
+  }
+}
+
+.admin-sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.25);
+  @media (min-width: 800px) {
+    display: none;
+  }
+}
+
+// Desktopta sidebar hep açık:
+@media (min-width: 800px) {
+  .admin-sidebar {
+    transform: translateX(0) !important;
+    position: static;
+    width: 240px;
+    min-width: 240px;
+    box-shadow: none;
+    height: 100vh;
+  }
+  .admin-sidebar-overlay {
+    display: none !important;
+  }
+}
+
+.admin-sidebar-logout {
+  display: block;
+  width: 80%;
+  margin: 32px auto 16px auto;
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(120deg, #e74c3c 40%, #c0392b 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(180, 40, 40, 0.1);
+  transition: background 0.18s;
+  &:hover {
+    background: linear-gradient(120deg, #c0392b 0%, #e74c3c 100%);
+  }
+}
