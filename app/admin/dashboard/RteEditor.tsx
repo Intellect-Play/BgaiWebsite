@@ -3,6 +3,7 @@
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Underline from "@tiptap/extension-underline";
+import "./jobs/jobsPanel.scss";
 
 import {
   FaBold,
@@ -91,7 +92,7 @@ const Tiptap = ({ content = "<p>Hello World!</p>", onChange }: TiptapProps) => {
 
       <EditorContent
         editor={editor}
-        className="border rounded-lg p-2 list-disc list-inside"
+        className="border rounded-lg p-2 list-disc list-inside jobslist"
         style={{
           userSelect: "text",
           WebkitUserSelect: "text",
