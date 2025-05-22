@@ -141,6 +141,9 @@
   border-radius: 16px;
   padding: 30px 32px 22px 32px;
   min-width: 540px;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
   box-shadow: 0 4px 44px rgba(50, 60, 100, 0.16);
   position: relative;
   animation: pop 0.14s cubic-bezier(0.4, 0, 0.2, 1);
@@ -326,7 +329,6 @@
 .tiptap {
   min-height: 150px;
   border: 1.5px solid #e5e7eb;
-  border-radius: 8px;
   padding: 10px 12px;
   font-size: 1rem;
   background: #f5f7fa;
@@ -344,4 +346,21 @@
 
 .job-description li {
   margin-bottom: 6px;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+ol {
+  list-style-type: decimal;
+  margin-left: 1.5rem;
+}
+
+ol li {
+  margin-bottom: 0.5rem;
 }

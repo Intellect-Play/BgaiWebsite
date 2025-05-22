@@ -2,16 +2,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import { EditorContent, useEditor } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
-import Underline from "@tiptap/extension-underline";
-import TextAlign from "@tiptap/extension-text-align";
-import Link from "@tiptap/extension-link";
-import TextStyle from "@tiptap/extension-text-style";
-import Color from "@tiptap/extension-color";
-import FontSize from "@tiptap/extension-font-size";
-
 import "./jobsPanel.scss";
+import Tiptap from "../RteEditor";
 
 interface Job {
   _id?: string;
@@ -39,23 +31,6 @@ export default function JobsPanel() {
   const [limit] = useState(8);
   const [totalPages, setTotalPages] = useState(1);
 
-  const editor = useEditor({
-    extensions: [
-      StarterKit,
-      Underline,
-      TextAlign.configure({ types: ["heading", "paragraph"] }),
-      Link,
-      TextStyle,
-      Color,
-      FontSize,
-    ],
-    content: form.description,
-    onUpdate({ editor }) {
-      const html = editor.getHTML();
-      setForm((prev) => ({ ...prev, description: html }));
-    },
-  });
-
   const fetchJobs = async () => {
     setLoading(true);
     try {
@@ -80,7 +55,6 @@ export default function JobsPanel() {
     setEditId(null);
     setImageFile(null);
     setImagePreview(null);
-    editor?.commands.setContent("");
   };
 
   const handleEdit = (job: Job) => {
@@ -93,7 +67,6 @@ export default function JobsPanel() {
     });
     setEditId(job._id!);
     setImagePreview(job.image ? `http://localhost:3001${job.image}` : null);
-    editor?.commands.setContent(job.description);
   };
 
   const handleDelete = async (id: string | undefined) => {
@@ -138,42 +111,6 @@ export default function JobsPanel() {
       setImagePreview(null);
     }
   };
-
-  const renderToolbar = () => (
-    <div className="tiptap-toolbar flex gap-[20px]">
-      <button
-        type="button"
-        onClick={() => editor?.chain().focus().toggleBold().run()}
-      >
-        Bold
-      </button>
-      <button
-        type="button"
-        onClick={() => editor?.chain().focus().toggleUnderline().run()}
-      >
-        Underline
-      </button>
-      <button
-        type="button"
-        onClick={() => editor?.chain().focus().setColor("#f43f5e").run()}
-      >
-        Red
-      </button>
-
-      <select
-        onChange={(e) =>
-          editor?.chain().focus().setFontSize(e.target.value).run()
-        }
-      >
-        <option value="">Font Size</option>
-        <option value="14px">14</option>
-        <option value="16px">16</option>
-        <option value="18px">18</option>
-        <option value="24px">24</option>
-        <option value="32px">32</option>
-      </select>
-    </div>
-  );
 
   return (
     <div className="page-center">
@@ -287,12 +224,12 @@ export default function JobsPanel() {
 
                 <label>
                   Description:
-                  {editor && (
-                    <>
-                      {renderToolbar()}
-                      <EditorContent editor={editor} className="tiptap" />
-                    </>
-                  )}
+                  <Tiptap
+                    content={form.description}
+                    onChange={(value: string) =>
+                      setForm((prev) => ({ ...prev, description: value }))
+                    }
+                  />
                 </label>
 
                 <label>
