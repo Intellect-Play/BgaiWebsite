@@ -1,9 +1,11 @@
 import { COLORS } from "@/app/constants/colors/colors";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 interface CardProps {
+  id: string;
   imageSrc: string;
   title: string;
   description?: string;
@@ -12,13 +14,20 @@ interface CardProps {
 }
 
 const Explore: React.FC<CardProps> = ({
+  id,
   imageSrc,
   title,
   description,
   onReadMoreClick,
 }) => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push(`/jobs/${id}`);
+  };
+
   return (
-    <div className=" ">
+    <div onClick={handleClick}>
       <div>
         <div
           className={`bg-[#fff] max-h-[15rem] h-[15rem]  cursor-pointer  transition-transform duration-300 hover:-translate-y-[3px] w-[22rem] max-w-[22rem] 
@@ -32,12 +41,6 @@ const Explore: React.FC<CardProps> = ({
             <h2 className="text-[20px] font-[700] text-gray-800 mb-2 text-[#444444] ">
               {title}
             </h2>
-
-            {description && (
-              <p className="flex justify-center items-center text-[#444444]">
-                <ChevronRight size={20} color={COLORS.primary} /> {description}
-              </p>
-            )}
           </div>
         </div>
       </div>

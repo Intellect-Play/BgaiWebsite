@@ -1,13 +1,43 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PageBannerComponent from "../_components/PageBannerComponent";
 import Explore from "./Explore/Explore";
 import { jobItems } from "../constants/jobItems";
 import "../jobs/jobs.scss";
 import CustomButton from "../_components/CustomButton";
 import { ChevronRight } from "lucide-react";
+import axios from "axios";
+
+interface Job {
+  _id: string;
+  title: string;
+  description: string;
+  image: string;
+}
 
 const page = () => {
+  const [jobs, setJobs] = useState<Job[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchJobs = async () => {
+      setLoading(true);
+      try {
+        const res = await axios.get("http://localhost:3001/api/bgaiv1/jobs", {
+          params: { page: 1, limit: 100 },
+        });
+        console.log("Gelen veri:", res.data);
+        setJobs(res.data.jobs || []);
+      } catch (err) {
+        console.error("Fetch error:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchJobs();
+  }, []);
+
   return (
     <div>
       <PageBannerComponent
@@ -35,17 +65,15 @@ const page = () => {
         </div>
 
         <div className="flex py-[2rem] flex-wrap max-w-[1200px] mx-auto gap-[30px] justify-center items-center">
-          {jobItems &&
-            jobItems.map((item, idx) => {
-              return (
-                <Explore
-                  key={item.id}
-                  title={item.title}
-                  description={item?.desc}
-                  imageSrc={item.image}
-                />
-              );
-            })}
+          {jobs.map((item) => (
+            <Explore
+              key={item._id}
+              id={item._id}
+              title={item.title}
+              description={item.description}
+              imageSrc={`http://localhost:3001${item.image}`}
+            />
+          ))}
         </div>
       </div>
 
