@@ -348,19 +348,21 @@
   margin-bottom: 6px;
 }
 
-ul {
-  list-style-type: disc;
-  margin-left: 1.5rem;
-}
+.jobslist {
+  ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+  }
 
-ul li {
-  margin-bottom: 0.5rem;
-}
-ol {
-  list-style-type: decimal;
-  margin-left: 1.5rem;
-}
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+  ol {
+    list-style-type: decimal;
+    margin-left: 1.5rem;
+  }
 
-ol li {
-  margin-bottom: 0.5rem;
+  ol li {
+    margin-bottom: 0.5rem;
+  }
 }
