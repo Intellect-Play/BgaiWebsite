@@ -224,6 +224,22 @@ export default function JobsPanel() {
           ))}
         </div>
 
+        {/* PAGINATION */}
+        <div className="jobs-table-pagination">
+          <button disabled={page <= 1} onClick={() => setPage(page - 1)}>
+            {"<"}
+          </button>
+          <span>
+            Page {page} of {totalPages}
+          </span>
+          <button
+            disabled={page >= totalPages}
+            onClick={() => setPage(page + 1)}
+          >
+            {">"}
+          </button>
+        </div>
+
         {modalMode && (
           <div className="modal-overlay" onClick={() => setModalMode("")}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
