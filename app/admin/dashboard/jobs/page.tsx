@@ -187,6 +187,43 @@ export default function JobsPanel() {
           </table>
         </div>
 
+        <div className="jobs-list-cards">
+          {jobs.map((job) => (
+            <div className="job-card" key={job._id}>
+              <div className="card-header">
+                <h2>{job.title}</h2>
+                <p>{new Date(job.expireDate).toLocaleDateString()}</p>
+              </div>
+              <img
+                src={
+                  job.image?.startsWith("http")
+                    ? job.image
+                    : `http://localhost:3001${job.image}`
+                }
+                alt={job.title}
+                className="jobs-table-img"
+              />
+              <div className="card-description">
+                <div dangerouslySetInnerHTML={{ __html: job.description }} />
+              </div>
+              <div className="card-actions">
+                <button
+                  className="jobs-action-btn edit"
+                  onClick={() => handleEdit(job)}
+                >
+                  Edit
+                </button>
+                <button
+                  className="jobs-action-btn delete"
+                  onClick={() => handleDelete(job._id)}
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+
         {modalMode && (
           <div className="modal-overlay" onClick={() => setModalMode("")}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
