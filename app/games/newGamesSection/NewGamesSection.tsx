@@ -23,7 +23,7 @@ const NewGamesSection = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/api/bgaiv1/games")
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/games`)
       .then((res) => {
         setGames(res.data.games);
       })
@@ -44,7 +44,7 @@ const NewGamesSection = () => {
                 game.image && game.image.startsWith("http")
                   ? game.image
                   : game.image
-                  ? `http://localhost:3001${game.image}`
+                  ? `${process.env.NEXT_PUBLIC_API_URL}${game.image}`
                   : "/images/defaultGameImage.png"
               }
               alt={game.title}

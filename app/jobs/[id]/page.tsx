@@ -16,7 +16,7 @@ const JobDetailPage = () => {
       setLoading(true);
       try {
         const res = await axios.get(
-          `http://localhost:3001/api/bgaiv1/jobs/${id}`
+          `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/jobs/${id}`
         );
         setJob(res.data.job);
       } catch (err) {
@@ -45,7 +45,7 @@ const JobDetailPage = () => {
         <div className="job-detail-container">
           <div className="job-detail-image-wrapper">
             <Image
-              src={`http://localhost:3001${job.image}`}
+              src={`${process.env.NEXT_PUBLIC_API_URL}${job.image}`}
               alt={job.title}
               fill
               className="job-detail-image"

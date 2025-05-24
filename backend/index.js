@@ -7,6 +7,7 @@ const router = express.Router();
 const connection = require("./db/db");
 const adminRoutes = require("./routes/adminRoutes");
 const jobRoutes = require("./routes/jobRoutes");
+const projectRoutes = require("./routes/projectRoutes");
 app.use(express.static(__dirname));
 
 connection();
@@ -28,6 +29,6 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/bgaiv1/games", gameRouter);
 app.use("/api/bgaiv1/admin", adminRoutes);
 app.use("/api/bgaiv1/jobs", jobRoutes);
-
+app.use("/api/bgaiv1/projects", projectRoutes);
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`Listening on port ${port}`));
