@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 const links = [
   { name: "Games", href: "/admin/dashboard/games" },
   { name: "Jobs", href: "/admin/dashboard/jobs" },
+  { name: "Projects", href: "/admin/dashboard/projects" },
 ];
 
 export default function AdminSidebar() {

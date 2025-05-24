@@ -63,7 +63,10 @@ const ProjectDetailPage = () => {
           />
         </div>
 
-        <div className="project-description">{project.description}</div>
+        <div
+          className="project-description"
+          dangerouslySetInnerHTML={{ __html: project.description }}
+        ></div>
 
         <div className="project-footer">
           <span>

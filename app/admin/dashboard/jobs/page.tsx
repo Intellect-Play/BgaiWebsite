@@ -34,9 +34,12 @@ export default function JobsPanel() {
   const fetchJobs = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:3001/api/bgaiv1/jobs", {
-        params: { search, page, limit },
-      });
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/jobs`,
+        {
+          params: { search, page, limit },
+        }
+      );
       setJobs(res.data.jobs);
       setTotalPages(res.data.totalPages);
     } catch {
@@ -66,13 +69,17 @@ export default function JobsPanel() {
       expireDate: job.expireDate.slice(0, 10),
     });
     setEditId(job._id!);
-    setImagePreview(job.image ? `http://localhost:3001${job.image}` : null);
+    setImagePreview(
+      job.image ? `${process.env.NEXT_PUBLIC_API_URL}${job.image}` : null
+    );
   };
 
   const handleDelete = async (id: string | undefined) => {
     if (!id) return;
     if (window.confirm("Are you sure to delete?")) {
-      await axios.delete(`http://localhost:3001/api/bgaiv1/jobs/${id}`);
+      await axios.delete(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/jobs/${id}`
+      );
       fetchJobs();
     }
   };
@@ -88,11 +95,14 @@ export default function JobsPanel() {
     if (imageFile) formData.append("image", imageFile);
 
     if (modalMode === "add") {
-      await axios.post("http://localhost:3001/api/bgaiv1/jobs", formData);
+      await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/jobs`,
+        formData
+      );
     }
     if (modalMode === "edit" && editId) {
       await axios.put(
-        `http://localhost:3001/api/bgaiv1/jobs/${editId}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/jobs/${editId}`,
         formData
       );
     }
@@ -160,7 +170,7 @@ export default function JobsPanel() {
                         src={
                           job.image?.startsWith("http")
                             ? job.image
-                            : `http://localhost:3001${job.image}`
+                            : `${process.env.NEXT_PUBLIC_API_URL}${job.image}`
                         }
                         alt={job.title}
                         className="jobs-table-img"
@@ -198,7 +208,7 @@ export default function JobsPanel() {
                 src={
                   job.image?.startsWith("http")
                     ? job.image
-                    : `http://localhost:3001${job.image}`
+                    : `${process.env.NEXT_PUBLIC_API_URL}${job.image}`
                 }
                 alt={job.title}
                 className="jobs-table-img"

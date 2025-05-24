@@ -46,6 +46,9 @@
   .job-detail-description {
     line-height: 1.7;
     color: #444;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
 
     p {
       margin-bottom: 0.8rem;
