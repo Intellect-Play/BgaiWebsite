@@ -46,6 +46,9 @@
   }
 
   .project-description {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
     font-size: 18px;
     line-height: 1.8;
     white-space: pre-line;
