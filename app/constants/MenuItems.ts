@@ -4,6 +4,6 @@ export const menuItems = [
   { title: "Life at Peak", path: "/lifeatpeak" },
   { title: "Games", path: "/games" },
   { title: "How we work", path: "/howWeWork" },
-  { title: "Internships", path: "/internships" },
+  { title: "Projects", path: "/projects" },
   { title: "Jobs", path: "/jobs" },
 ];

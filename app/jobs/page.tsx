@@ -23,9 +23,12 @@ const page = () => {
     const fetchJobs = async () => {
       setLoading(true);
       try {
-        const res = await axios.get("http://localhost:3001/api/bgaiv1/jobs", {
-          params: { page: 1, limit: 100 },
-        });
+        const res = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/jobs`,
+          {
+            params: { page: 1, limit: 100 },
+          }
+        );
         console.log("Gelen veri:", res.data);
         setJobs(res.data.jobs || []);
       } catch (err) {
@@ -71,7 +74,7 @@ const page = () => {
               id={item._id}
               title={item.title}
               description={item.description}
-              imageSrc={`http://localhost:3001${item.image}`}
+              imageSrc={`${process.env.NEXT_PUBLIC_API_URL}${item.image}`}
             />
           ))}
         </div>
