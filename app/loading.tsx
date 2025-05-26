@@ -1,26 +1,50 @@
 "use client";
-import { motion } from "framer-motion";
+import { useEffect, useState, ReactNode } from "react";
+import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 
-export default function Loading() {
+interface LoadingWrapperProps {
+  children: ReactNode;
+}
+
+export default function LoadingWrapper({ children }: LoadingWrapperProps) {
+  const [loading, setLoading] = useState(true);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000); // 1 saniye bekleme
+
+    return () => clearTimeout(timer);
+  }, [pathname]);
+
   return (
-    <div className="w-full h-screen bg-[#f2f2f2] dark:bg-[#F9F9F9] flex items-center justify-center">
-      <div className="relative w-[100px] h-[100px]">
-        {[...Array(3)].map((_, i) => (
+    <>
+      <AnimatePresence mode="wait">
+        {loading && (
           <motion.div
-            key={i}
-            className="absolute top-0 left-0 w-full h-full rounded-full border border-[#60a5fa]"
-            initial={{ scale: 0.5, opacity: 1 }}
-            animate={{ scale: 2, opacity: 0 }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              delay: i * 0.3,
-              ease: "easeInOut",
+            key="loader"
+            initial={{ opacity: 1, filter: "blur(0px)" }}
+            animate={{ opacity: 1 }}
+            exit={{
+              opacity: 0,
+              filter: "blur(10px)",
+              transition: { duration: 0.5 },
             }}
-          />
-        ))}
-        <div className="w-[30px] h-[30px] rounded-full bg-[#60a5fa] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10" />
-      </div>
-    </div>
+            transition={{ duration: 0.3 }}
+            className="fixed top-0 left-0 w-screen h-screen z-[9999] flex items-center justify-center bg-[#f2f2f2] dark:bg-[#F9F9F9]"
+          >
+            <img
+              src="/images/logoBG.png"
+              alt="Loading..."
+              className="w-[300px] h-[200px]"
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {children}
+    </>
   );
 }
