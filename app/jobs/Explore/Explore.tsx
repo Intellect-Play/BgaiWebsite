@@ -31,7 +31,7 @@ const Explore: React.FC<CardProps> = ({
       <div>
         <div
           className={`bg-[#fff] max-h-[15rem] h-[15rem]  cursor-pointer  transition-transform duration-300 hover:-translate-y-[3px] w-[22rem] max-w-[22rem] 
-     rounded-[4px] overflow-hidden shadow-[0_35px_35px_rgba(0,0,0,0.10)] flex flex-col`}
+     rounded-[4px] overflow-hidden shadow-[0_2px_6px_rgba(0,0,0,0.03)] flex flex-col`}
         >
           <div className="relative w-full h-[150px]">
             <Image src={imageSrc} alt={title} fill className="object-cover" />

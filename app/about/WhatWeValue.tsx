@@ -17,7 +17,7 @@ const WhatWeValue = () => {
               return (
                 <div
                   key={item.id}
-                  className="max-w-[23rem] whatWeValueCardWidth bg-[#fff] px-[40px] py-[30px] shadow-[0_35px_35px_rgba(0,0,0,0.10)] rounded-[3px]"
+                  className="max-w-[23rem] whatWeValueCardWidth bg-[#fff] px-[40px] py-[30px]  rounded-[3px]"
                 >
                   <h2
                     className="text-center text-[20px] font-[600]"
