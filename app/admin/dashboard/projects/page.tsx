@@ -215,11 +215,11 @@ export default function ProjectsPanel() {
                 alt={project.title}
                 className="projects-table-img"
               />
-              <div className="card-description">
+              {/* <div className="card-description">
                 <div
                   dangerouslySetInnerHTML={{ __html: project.description }}
                 />
-              </div>
+              </div> */}
               <div className="card-actions">
                 <button
                   className="projects-action-btn edit"

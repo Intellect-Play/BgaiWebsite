@@ -213,9 +213,9 @@ export default function JobsPanel() {
                 alt={job.title}
                 className="jobs-table-img"
               />
-              <div className="card-description">
+              {/* <div className="card-description">
                 <div dangerouslySetInnerHTML={{ __html: job.description }} />
-              </div>
+              </div> */}
               <div className="card-actions">
                 <button
                   className="jobs-action-btn edit"
