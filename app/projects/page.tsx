@@ -44,7 +44,7 @@ const page = () => {
         height="65vh"
       />
 
-      <div className="flex py-[2rem] flex-wrap max-w-[1200px] mx-auto gap-[30px] justify-center items-center">
+      <div className="flex py-[5rem] flex-wrap max-w-[1200px] mx-auto gap-[30px] justify-center items-center">
         {projects.map((project) => (
           <ProjectsCard
             key={project._id}

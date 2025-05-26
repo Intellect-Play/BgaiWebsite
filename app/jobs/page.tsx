@@ -53,11 +53,11 @@ const page = () => {
       />
 
       <div className="bg-[#F9F9F9]">
-        <div className="max-w-[1100px] mx-auto">
+        <div className="max-w-[1100px] pt-[5rem] mx-auto">
           <p className="text-[3rem] jobsCenter">
             <span className="font-[700] text-[#444444]"> Explore </span> jobs
           </p>
-          <p className="max-w-[1200px] jobsParagraph">
+          <p className="max-w-[1200px] jobsParagraph text-[18px] text-[#444444]">
             Everyone says ‘we are a team’. It’s up to you to find the right one.
             Peak teams are autonomous, fast-moving and focused on improving
             constantly to become the best at what they do. We work together to
@@ -67,7 +67,7 @@ const page = () => {
           </p>
         </div>
 
-        <div className="flex py-[2rem] flex-wrap max-w-[1200px] mx-auto gap-[30px] justify-center items-center">
+        <div className="flex py-[3rem] flex-wrap max-w-[1200px] mx-auto gap-[30px] justify-center items-center">
           {jobs.map((item) => (
             <Explore
               key={item._id}
