@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.scss";
 import Layout from "./_featured/Layout/Layout";
 import Providers from "./_provide/Providers";
+import LoadingWrapper from "./loading";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +18,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <Layout>{children}</Layout>
+          <LoadingWrapper>
+            <Layout>{children}</Layout>
+          </LoadingWrapper>
         </Providers>
       </body>
     </html>
