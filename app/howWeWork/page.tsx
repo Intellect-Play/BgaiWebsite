@@ -16,7 +16,7 @@ const HowWeWork = () => {
         textSize="4rem"
         textWeight="600"
       />
-      <div className="bg-[#F9F9F9] py-[2rem] ">
+      <div className="bg-[#F9F9F9] py-[5rem] ">
         <div className="max-w-[1200px] mx-auto  ">
           <div className="flex justify-center items-center gap-[30px] flex-wrap">
             {howWeWorkItems &&

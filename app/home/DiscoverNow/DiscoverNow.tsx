@@ -18,7 +18,7 @@ const DiscoverNow: React.FC = () => {
       <div className="absolute  top-[0] left-[0] w-full h-full bg-[rgba(0,0,0,0.5)] flex flex-col justify-center items-center text-white text-center">
         <h1 className="text-4xl discoverFont text-[3.5rem] text-[#fff] max-w-[550px] mb-4">
           People are at the <span className="font-[1000]">core</span> of
-          everything we do{" "}
+          everything{" "}
         </h1>
 
         <div className="mt-[4rem]">

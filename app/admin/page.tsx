@@ -42,7 +42,7 @@ const AdminPage = () => {
   return (
     <div className="admin-login-wrapper">
       <form className="admin-login-card" onSubmit={handleLogin}>
-        <h2>Admin Girişi</h2>
+        <h2>Admin Login</h2>
         <input
           type="email"
           placeholder="Admin Email"
@@ -53,14 +53,14 @@ const AdminPage = () => {
         />
         <input
           type="password"
-          placeholder="Admin Şifre"
+          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           className="admin-input"
           required
         />
         <button type="submit" className="admin-login-btn">
-          Giriş Yap
+          Login
         </button>
         {error && <div className="admin-error">{error}</div>}
       </form>
