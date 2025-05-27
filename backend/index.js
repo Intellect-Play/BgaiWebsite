@@ -8,6 +8,7 @@ const connection = require("./db/db");
 const adminRoutes = require("./routes/adminRoutes");
 const jobRoutes = require("./routes/jobRoutes");
 const projectRoutes = require("./routes/projectRoutes");
+const howWeWorkRoutes = require("./routes/howWoWorkRoutes");
 app.use(express.static(__dirname));
 
 connection();
@@ -30,5 +31,7 @@ app.use("/api/bgaiv1/games", gameRouter);
 app.use("/api/bgaiv1/admin", adminRoutes);
 app.use("/api/bgaiv1/jobs", jobRoutes);
 app.use("/api/bgaiv1/projects", projectRoutes);
+app.use("/api/bgaiv1/howweworks", howWeWorkRoutes);
+
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`Listening on port ${port}`));
