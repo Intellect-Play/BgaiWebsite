@@ -15,7 +15,7 @@ export default function LoadingWrapper({ children }: LoadingWrapperProps) {
     setLoading(true);
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1000); // 1 saniye bekleme
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [pathname]);
