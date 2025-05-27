@@ -57,7 +57,10 @@ const HowWeWork = () => {
               <p>No data found.</p>
             ) : (
               items.map((item) => (
-                <div key={item._id}>
+                <div
+                  onClick={() => router.push(`/howWeWork/${item._id}`)}
+                  key={item._id}
+                >
                   <HowWeWorkCard
                     title={item.title}
                     description={truncateText(item.description, 65)}
