@@ -9,6 +9,7 @@ const links = [
   { name: "Games", href: "/admin/dashboard/games" },
   { name: "Jobs", href: "/admin/dashboard/jobs" },
   { name: "Projects", href: "/admin/dashboard/projects" },
+  { name: "How We Work", href: "/admin/dashboard/howwework" },
 ];
 
 export default function AdminSidebar() {
