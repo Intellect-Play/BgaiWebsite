@@ -13,6 +13,8 @@ type Game = {
 };
 
 export default function GamesPage() {
+  const endPoint = "api/bgaiv1/games";
+
   const [games, setGames] = useState<Game[]>([]);
   const [modalMode, setModalMode] = useState<"add" | "edit" | "">("");
   const [form, setForm] = useState<Omit<Game, "_id">>({
@@ -35,9 +37,12 @@ export default function GamesPage() {
   const fetchGames = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:3001/api/bgaiv1/games", {
-        params: { search, page, limit },
-      });
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_URL}/${endPoint}`,
+        {
+          params: { search, page, limit },
+        }
+      );
       setGames(res.data.games);
       setTotalPages(res.data.totalPages);
     } catch (err) {
@@ -82,7 +87,7 @@ export default function GamesPage() {
       game.image
         ? game.image.startsWith("http")
           ? game.image
-          : `http://localhost:3001${game.image}`
+          : `${process.env.NEXT_PUBLIC_API_URL}${game.image}`
         : "/images/defaultGameImage.png"
     );
   };
@@ -91,7 +96,9 @@ export default function GamesPage() {
   const handleDelete = async (id: string | undefined) => {
     if (!id) return;
     if (window.confirm("Are you sure to delete?")) {
-      await axios.delete(`http://localhost:3001/api/bgaiv1/games/${id}`);
+      await axios.delete(
+        `${process.env.NEXT_PUBLIC_API_URL}/${endPoint}/${id}`
+      );
       fetchGames();
     }
   };
@@ -114,13 +121,17 @@ export default function GamesPage() {
     }
 
     if (modalMode === "add") {
-      await axios.post("http://localhost:3001/api/bgaiv1/games", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/${endPoint}`,
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
     }
     if (modalMode === "edit" && editId) {
       await axios.put(
-        `http://localhost:3001/api/bgaiv1/games/${editId}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/${endPoint}/${editId}`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -198,7 +209,7 @@ export default function GamesPage() {
                           game.image?.startsWith("http")
                             ? game.image
                             : game.image
-                            ? `http://localhost:3001${game.image}`
+                            ? `${process.env.NEXT_PUBLIC_API_URL}${game.image}`
                             : "/images/noimage.jpeg"
                         }
                         alt={game.title}
@@ -249,7 +260,7 @@ export default function GamesPage() {
                   game.image?.startsWith("http")
                     ? game.image
                     : game.image
-                    ? `http://localhost:3001${game.image}`
+                    ? `${process.env.NEXT_PUBLIC_API_URL}${game.image}`
                     : "/images/defaultGameImage.png"
                 }
                 alt={game.title}
@@ -375,7 +386,7 @@ export default function GamesPage() {
                         (form.image && form.image.startsWith("http")
                           ? form.image
                           : form.image
-                          ? `http://localhost:3001${form.image}`
+                          ? `${process.env.NEXT_PUBLIC_API_URL}${form.image}`
                           : "/images/defaultGameImage.png")
                       }
                       alt="preview"
