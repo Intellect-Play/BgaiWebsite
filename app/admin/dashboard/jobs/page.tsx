@@ -30,12 +30,13 @@ export default function JobsPanel() {
   const [page, setPage] = useState(1);
   const [limit] = useState(8);
   const [totalPages, setTotalPages] = useState(1);
+  const apiEndpoint = "api/bgaiv1/jobs";
 
   const fetchJobs = async () => {
     setLoading(true);
     try {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/jobs`,
+        `${process.env.NEXT_PUBLIC_API_URL}/${apiEndpoint}`,
         {
           params: { search, page, limit },
         }
@@ -78,7 +79,7 @@ export default function JobsPanel() {
     if (!id) return;
     if (window.confirm("Are you sure to delete?")) {
       await axios.delete(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/jobs/${id}`
+        `${process.env.NEXT_PUBLIC_API_URL}/${apiEndpoint}/${id}`
       );
       fetchJobs();
     }
@@ -96,13 +97,13 @@ export default function JobsPanel() {
 
     if (modalMode === "add") {
       await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/jobs`,
+        `${process.env.NEXT_PUBLIC_API_URL}/${apiEndpoint}`,
         formData
       );
     }
     if (modalMode === "edit" && editId) {
       await axios.put(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/jobs/${editId}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/${apiEndpoint}/${editId}`,
         formData
       );
     }

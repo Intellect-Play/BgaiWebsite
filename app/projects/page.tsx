@@ -14,12 +14,13 @@ interface ProjectType {
 
 const page = () => {
   const [projects, setProjects] = useState<ProjectType[]>([]);
+  const apiEndpoint = "api/bgaiv1/projects";
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/projects`
+          `${process.env.NEXT_PUBLIC_API_URL}/${apiEndpoint}`
         ); // API endpointin buysa
         const data = await res.json();
         if (data.success) {

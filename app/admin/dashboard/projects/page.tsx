@@ -30,12 +30,13 @@ export default function ProjectsPanel() {
   const [page, setPage] = useState(1);
   const [limit] = useState(8);
   const [totalPages, setTotalPages] = useState(1);
+  const apiEndpoint = "api/bgaiv1/projects";
 
   const fetchProjects = async () => {
     setLoading(true);
     try {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/projects`,
+        `${process.env.NEXT_PUBLIC_API_URL}/${apiEndpoint}`,
         {
           params: { search, page, limit },
         }
@@ -80,7 +81,7 @@ export default function ProjectsPanel() {
     if (!id) return;
     if (window.confirm("Are you sure to delete?")) {
       await axios.delete(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/projects/${id}`
+        `${process.env.NEXT_PUBLIC_API_URL}/${apiEndpoint}/${id}`
       );
       fetchProjects();
     }
@@ -98,13 +99,13 @@ export default function ProjectsPanel() {
 
     if (modalMode === "add") {
       await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/projects`,
+        `${process.env.NEXT_PUBLIC_API_URL}/${apiEndpoint}`,
         formData
       );
     }
     if (modalMode === "edit" && editId) {
       await axios.put(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/projects/${editId}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/${apiEndpoint}/${editId}`,
         formData
       );
     }

@@ -41,6 +41,9 @@
 }
 
 .detail-description {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
   font-size: 1.07rem;
   line-height: 1.8;
   color: #444;
