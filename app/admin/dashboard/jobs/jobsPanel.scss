@@ -287,6 +287,10 @@
       color: #222;
     }
 
+    .modal-content {
+      max-width: 400px !important;
+      min-width: 400px !important;
+    }
     .card-header p {
       font-size: 1rem;
       color: #666;

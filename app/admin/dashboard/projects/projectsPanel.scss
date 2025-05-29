@@ -261,6 +261,11 @@
     display: none;
   }
 
+  .modal-content {
+    max-width: 400px !important;
+    min-width: 400px !important;
+  }
+
   .projects-list-cards {
     display: flex;
     flex-direction: column;
