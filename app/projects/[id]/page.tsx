@@ -16,12 +16,13 @@ const ProjectDetailPage = () => {
   const { id } = useParams();
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
+  const apiEndpoint = "api/bgaiv1/projects";
 
   useEffect(() => {
     const fetchProject = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/projects/${id}`
+          `${process.env.NEXT_PUBLIC_API_URL}/${apiEndpoint}/${id}`
         );
         const data = await res.json();
         if (data.success) {

@@ -10,13 +10,14 @@ const JobDetailPage = () => {
   const { id } = useParams();
   const [job, setJob] = useState<any>(null);
   const [loading, setLoading] = useState(false);
+  const apiEndpoint = "api/bgaiv1/jobs";
 
   useEffect(() => {
     const fetchJob = async () => {
       setLoading(true);
       try {
         const res = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/jobs/${id}`
+          `${process.env.NEXT_PUBLIC_API_URL}/${apiEndpoint}/${id}`
         );
         setJob(res.data.job);
       } catch (err) {

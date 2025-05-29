@@ -18,13 +18,14 @@ const HowWeWorkDetailPage = () => {
   const { id } = useParams();
   const [item, setItem] = useState<HowWeWorkItem | null>(null);
   const [loading, setLoading] = useState(false);
+  const apiEndpoint = "api/bgaiv1/howweworks";
 
   const fetchItem = async () => {
     if (!id) return;
     setLoading(true);
     try {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/howweworks/${id}`
+        `${process.env.NEXT_PUBLIC_API_URL}/${apiEndpoint}/${id}`
       );
       setItem(res.data.howWeWork);
     } catch (err) {

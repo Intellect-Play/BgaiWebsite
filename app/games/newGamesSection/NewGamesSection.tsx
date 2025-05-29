@@ -16,6 +16,7 @@ type Game = {
 
 const NewGamesSection = () => {
   const [games, setGames] = useState<Game[]>([]);
+  const apiEndpoint = "api/bgaiv1/games";
 
   const handleStoreClick = (link: string) => {
     if (link) window.open(link, "_blank");
@@ -23,7 +24,7 @@ const NewGamesSection = () => {
 
   useEffect(() => {
     axios
-      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/games`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/${apiEndpoint}`)
       .then((res) => {
         setGames(res.data.games);
       })

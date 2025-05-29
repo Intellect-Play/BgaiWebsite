@@ -29,12 +29,13 @@ export default function HowWeWorkPanel() {
   const [page, setPage] = useState(1);
   const [limit] = useState(8);
   const [totalPages, setTotalPages] = useState(1);
+  const apiEndpoint = "api/bgaiv1/howweworks";
 
   const fetchHowWeWork = async () => {
     setLoading(true);
     try {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/howweworks`,
+        `${process.env.NEXT_PUBLIC_API_URL}/${apiEndpoint}`,
         { params: { search, page, limit } }
       );
       setHowWeWork(res.data.howWeWork);
@@ -75,7 +76,7 @@ export default function HowWeWorkPanel() {
     if (!id) return;
     if (window.confirm("Are you sure to delete?")) {
       await axios.delete(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/howweworks/${id}`
+        `${process.env.NEXT_PUBLIC_API_URL}/${apiEndpoint}/${id}`
       );
       fetchHowWeWork();
     }
@@ -93,13 +94,13 @@ export default function HowWeWorkPanel() {
 
     if (modalMode === "add") {
       await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/howweworks`,
+        `${process.env.NEXT_PUBLIC_API_URL}/${apiEndpoint}`,
         formData
       );
     }
     if (modalMode === "edit" && editId) {
       await axios.put(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/howweworks/${editId}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/${apiEndpoint}/${editId}`,
         formData
       );
     }

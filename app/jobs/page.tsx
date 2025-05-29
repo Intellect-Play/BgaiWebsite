@@ -18,13 +18,14 @@ interface Job {
 const page = () => {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(false);
+  const apiEndpoint = "api/bgaiv1/jobs";
 
   useEffect(() => {
     const fetchJobs = async () => {
       setLoading(true);
       try {
         const res = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/jobs`,
+          `${process.env.NEXT_PUBLIC_API_URL}/${apiEndpoint}`,
           {
             params: { page: 1, limit: 100 },
           }
