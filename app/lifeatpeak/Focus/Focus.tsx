@@ -6,53 +6,47 @@ const Focus = () => {
     <div className="max-w-[1200px] mx-auto px-[10px] ">
       <div className="focus-header">
         <h2 className="text-[3rem] text-[#444444]">
-          <span className="font-[600]"> Focus </span> on doing what you do best
+          <span className="font-[600]"> Focus </span> on Playing Your Best Game
         </h2>
         <p className="text-[#444444]">
-          The rest is up to us! We form an environment that makes it easy for
-          you to focus on doing your best work.
+          We take care of the extras — so you can focus on creating, coding, and
+          leveling up what you do best.
         </p>
       </div>
 
       <div className="features-container py-[20px]">
         <div className="feature-box">
-          <h2 className="feature-title">Food</h2>
+          <h2 className="feature-title">Snacks & Energy</h2>
           <p className="feature-text">
-            Enjoy your favorite food choices at any time of day. Our team of
-            culinary experts prepares delicious breakfast, lunch, and dinner in
-            our spacious kitchen to make your life easy and tasty. Additionally,
-            we offer a variety of snacks and beverages to cater to both healthy
-            and less healthy preferences.
+            From coffee breaks to quick bites, we keep the fuel flowing so you
+            can stay sharp through every sprint, playtest, and late-night idea
+            drop.
           </p>
         </div>
 
         <div className="feature-box">
           <h2 className="feature-title">Events</h2>
           <p className="feature-text">
-            We frequently have fun together on company trips, cinema nights,
-            brunches, concerts, outdoor activities and monthly get together
-            parties in our office. We create lots of opportunities to enjoy life
-            to the max - but only during weekdays, because it's up to you how
-            you spend your weekend.
+            LAN parties, game jams, movie nights — we love having fun together
+            beyond the screen. It’s not just about work; it’s about building
+            memories as a squad.
           </p>
         </div>
 
         <div className="feature-box">
-          <h2 className="feature-title">Location</h2>
+          <h2 className="feature-title">Workspace</h2>
           <p className="feature-text">
-            Our office is at the heart of Istanbul. We’re very close to major
-            public transportation lines and the Bosphorus is just around the
-            corner - so if you need a break or seeking inspiration, just walk up
-            to the terrace, soak up the jaw dropping views and relax.
+            Our setup is simple: comfortable space, fast internet, and a
+            creative vibe. Whether you need quiet to grind code or a brainstorm
+            corner to drop ideas, we’ve got you covered.
           </p>
         </div>
 
         <div className="feature-box">
-          <h2 className="feature-title">Equipment</h2>
+          <h2 className="feature-title">Gear</h2>
           <p className="feature-text">
-            Freedom to choose your tools and equipment. Whether it’s a Mac, an
-            IDE or any software or hardware - choose whatever equipment you need
-            to thrive on.
+            Choose your loadout. Mac or PC, tablet or drawing pad — whatever
+            tools you need to build epic games, they’re in your hands.
           </p>
         </div>
       </div>

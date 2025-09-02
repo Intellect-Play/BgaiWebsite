@@ -16,9 +16,9 @@ const AboutSectionSwiperBottom = () => {
   return (
     <div className="">
       <AboutSectionSwiper
-        title="Life At"
-        description="We form an environment that makes it easy for you to focus on doing your best. Working on hard problems allows us to grow individually and as a team."
-        spanWord="Peak"
+        title="Play Hard, Build"
+        description="At BGAI Tech, we live and breathe games. We’re a small squad with big dreams, leveling up together one project at a time. Here, every brainstorm feels like co-op mode — fast, fun, and full of ideas waiting to respawn into reality."
+        spanWord="Harder"
         buttonTitle="EXPLORE"
         buttonWidth="10rem"
         buttonExpandedWidth="10.5rem"

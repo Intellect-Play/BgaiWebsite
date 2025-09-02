@@ -11,7 +11,7 @@ const OurJourney = () => {
       <div className="max-w-[1200px] px-[10px] mx-auto">
         <AboutSectionSwiper
           title="Our"
-          description="We are a team, we think big and we have big goals to achieve. Our approach is to constantly explore, progress and grow as a team throughout our journey."
+          description="BGAI Tech started as a small squad with one mission: to make games we’d love to play ourselves. From our first prototypes to today, every project has been about learning, experimenting, and unlocking new levels as creators."
           swiperItems={aboutPageSwiperItems}
           wrapperClass={styles.aboutSectionWrapper}
           textContentClass={styles.aboutDreams}
@@ -19,11 +19,10 @@ const OurJourney = () => {
           swiperClass={styles.aboutSwiper}
           descWidth={styles.aboutTextWidth}
           spanWord="Journey"
-          desc2="Our goal at Peak is to gather people with high capabilities, strong values and a will to shape Peak’s story."
-          desc3="To start realising our big dreams, we chose mobile gaming as our first and main area of focus. Playing games is one of the few truly universal activities that transcends age, gender or nationality and we believe with the right product, we could reach billions of people worldwide."
+          desc2="Games are universal — they cut across age, culture, and language. That’s why we believe with the right ideas, we can reach millions of players worldwide. And this is just our early game — the real adventure is still ahead."
         />
 
-        <div className="flex max-w-[1200px] mx-auto gap-[20px]   ourJourneyDirection mt-[100px] justify-between">
+        {/* <div className="flex max-w-[1200px] mx-auto gap-[20px]   ourJourneyDirection mt-[100px] justify-between">
           <div>
             <h2
               style={{
@@ -54,7 +53,7 @@ const OurJourney = () => {
               the heart of our decision making.
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ const page = () => {
   return (
     <div>
       <PageBannerComponent
-        title="Life At Peak"
+        title="Inside BGAI Tech"
         textSize="4.3rem"
         textColor="white"
         textWeight="600"
@@ -23,9 +23,9 @@ const page = () => {
 
       <div className="max-w-[1200px] mx-auto my-[5rem] px-[10px]">
         <AboutSectionSwiper
-          title="Make an "
-          description="Our aim is to provide products that enrich the lives of our users. Your work will be appreciated by the hundreds of millions of people who use our products around the world. You will be encouraged and supported to reach new heights and be part of the evolution of a global technology company - Peak. The Peak team has already touched the lives of countless millions of people around the world. Just imagine what we can do with you aboard."
-          spanWord="impact"
+          title="Make Your Mark in  "
+          description="At BGAI Tech, every line of code, every design, and every idea has the power to reach players across the globe. The work you do here won’t just build games — it will create experiences that people carry with them, share with friends, and come back to for “one more round.”"
+          spanWord="Gaming"
           swiperItems={lifeAtPeakPageSwiperItems}
           wrapperClass={styles.aboutSectionWrapper}
           textContentClass={styles.aboutDreams}
@@ -33,7 +33,8 @@ const page = () => {
           swiperClass={styles.aboutSwiper}
           descWidth={styles.aboutTextWidth}
           desc2="
-The Peak team has already touched the lives of countless millions of people around the world. Just imagine what we can do with you aboard."
+We’re still a small squad, but together we’re aiming high: new mechanics, bigger worlds, and unforgettable gameplay. With the right teammates, we can craft adventures that impact millions."
+          desc3="Imagine what we can achieve with you on board. "
         />
       </div>
 

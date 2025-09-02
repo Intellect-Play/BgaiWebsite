@@ -23,7 +23,7 @@ const FunTogether = () => {
   return (
     <div className="fun-section">
       <h2 className="fun-title">
-        We have <span>fun</span> together
+        We Level <span>Up</span> together
       </h2>
 
       <Swiper className="fun-swiper">

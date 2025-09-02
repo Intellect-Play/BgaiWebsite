@@ -16,10 +16,10 @@ const AboutSectionSwiperTop = () => {
     <div>
       <div className="">
         <AboutSectionSwiper
-          title="Chasing Our"
-          description="We are a team, we think big and we have big goals to achieve. Our approach is to constantly explore, progress and grow as a team throughout our journey."
-          buttonTitle="READ OUR STORY"
-          buttonWidth="15rem"
+          title="Leveling Up"
+          description="We’re not just a studio — we’re gamers at heart. Every project we make is built on passion, creativity, and the thrill of competition. Our mission is simple: craft games that hook you from the first click, keep you grinding for that next level, and give you stories worth sharing."
+          buttonTitle="LEARN MORE"
+          buttonWidth="13rem"
           buttonExpandedWidth="15.5rem"
           buttonIcon={<ChevronRight size={20} />}
           swiperItems={swiperItems}

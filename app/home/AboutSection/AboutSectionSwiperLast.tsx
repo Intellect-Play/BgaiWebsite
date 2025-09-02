@@ -9,8 +9,8 @@ const AboutSectionSwiperLast = () => {
     <div>
       <div className="max-w-[1200px] mx-auto mt-[50px] px-[10px]">
         <AboutSectionSwiper
-          title="We are a"
-          description="The products we build are ever-evolving and continue to reach more and more users all around the world. Operating on a global scale requires focus, dedication and a great team."
+          title="We are game studio with "
+          description="At BGAI Tech, we create games that cross borders and bring players together. From casual fun to challenging RPGs, our goal is to design experiences that anyone, anywhere, can enjoy."
           buttonTitle="SEE OUR GAMES"
           buttonWidth="15rem"
           buttonExpandedWidth="15.5rem"
@@ -22,7 +22,7 @@ const AboutSectionSwiperLast = () => {
           swiperClass={styles.aboutSwiper}
           descWidth={styles.aboutTextWidth}
           spanWord="global"
-          additionText="technology company"
+          additionText="ambitions"
           textWidth="max-w-[500px]"
         />
       </div>

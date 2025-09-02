@@ -1,17 +1,17 @@
 export const whatWeValueItems = [
   {
     id: 1,
-    title: "People",
-    desc: "Peak is its people. Peak is a collective of driven people from a multitude of different backgrounds & disciplines.",
+    title: "Players",
+    desc: "Our games exist because of our players. We listen, learn, and build experiences that connect with people all around the world.",
   },
   {
     id: 2,
-    title: "Progress",
-    desc: "Progress for us means initiating and pushing forward without the fear of making mistakes.",
+    title: "Creativity",
+    desc: "Every idea matters. From sketches to prototypes, we believe in experimenting, taking risks, and pushing boundaries to create something unforgettable.",
   },
   {
     id: 3,
-    title: "Impact",
-    desc: "We reach hundreds of millions of people by creating products that they love.",
+    title: "Growth",
+    desc: "We are a small team with big ambitions. For us, growth means leveling up together — learning from mistakes, celebrating wins, and never stopping the grind.",
   },
 ];

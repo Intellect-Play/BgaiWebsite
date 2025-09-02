@@ -58,7 +58,7 @@ const PositionsSection: React.FC<PositionsSectionProps> = ({
             <SwiperSlide className="rounded-[5px] px-[10px] py-[20px] max-h-[330px]">
               <div className="flex flex-col gap-[5px] h-full">
                 <p className="text-[28px] w-full text-center text-[#444444] font-[600]">
-                  Software Engineer, Games
+                  Game Designer
                 </p>
 
                 <div
@@ -69,10 +69,10 @@ const PositionsSection: React.FC<PositionsSectionProps> = ({
                 ></div>
 
                 <p className="text-[18px]  text-[#444444]">
-                  We are looking for a Mobile Software Engineer to join our
-                  Engineering Team. Together with your team you will be crafting
-                  code that brings to life game features, items and levels in
-                  our games
+                  Do you see games not just as entertainment, but as experiences
+                  to shape? We need a Game Designer who can balance mechanics,
+                  create engaging challenges, and design worlds that keep
+                  players coming back for more.
                 </p>
                 <div className="cursor-pointer flex justify-center items-center  mt-auto font-[600] ">
                   <CustomButton
@@ -91,7 +91,7 @@ const PositionsSection: React.FC<PositionsSectionProps> = ({
             <SwiperSlide className=" rounded-[5px] px-[10px] py-[20px]  max-h-[330px]">
               <div className="flex flex-col h-full gap-[5px]">
                 <p className="text-[28px] w-full text-center text-[#444444] font-[600]">
-                  Product Specialist, Games
+                  UI/UX Artist (Games)
                 </p>
 
                 <div
@@ -102,10 +102,10 @@ const PositionsSection: React.FC<PositionsSectionProps> = ({
                 ></div>
 
                 <p className="text-[18px]  text-[#444444]">
-                  We are looking for a talented Product Specialist who will be
-                  responsible for creating the best experience for our users. As
-                  a member of our team, you will work collaboratively with
-                  software
+                  We’re on the hunt for a UI/UX Artist who can make our games
+                  not just fun to play, but a joy to experience. From sleek
+                  menus to intuitive player flows, you’ll design interfaces that
+                  feel smooth, stylish, and player-friendly.
                 </p>
 
                 <div className="cursor-pointer flex justify-center items-center  mt-auto font-[600] ">
