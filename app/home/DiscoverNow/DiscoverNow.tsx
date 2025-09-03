@@ -23,7 +23,7 @@ const DiscoverNow: React.FC = () => {
         <h1 className="text-4xl discoverFont text-[3.5rem] text-center text-[#fff] max-w-[550px] mx-auto mb-4">
           <BlurText
             text="People are the core of everything"
-            delay={500}
+            delay={300}
             className="text-center"
           />
         </h1>

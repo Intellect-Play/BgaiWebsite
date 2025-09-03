@@ -69,7 +69,7 @@ const AboutSectionSwiper: React.FC<AboutSectionSwiperProps> = ({
       >
         <h1 className={`text-[3rem] text-[#444444] ${textWidth}`}>
           <BlurText2
-            delay={600}
+            delay={300}
             text={[title, spanWord, additionText].filter(Boolean).join(" ")}
           />
         </h1>

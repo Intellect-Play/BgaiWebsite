@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./accardion.scss";
+import { COLORS } from "@/app/constants/colors/colors";
 
 const items = [
   {
@@ -55,7 +56,9 @@ const Accardion = () => {
             >
               <div className="accordion-title" onClick={() => toggle(index)}>
                 {item.title}
-                <span className="icon">{openIndex === index ? "▲" : "▼"}</span>
+                <span className="icon" style={{ color: COLORS.primary }}>
+                  {openIndex === index ? "▲" : "▼"}
+                </span>
               </div>
 
               <AnimatePresence initial={false}>
