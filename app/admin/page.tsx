@@ -26,7 +26,7 @@ const AdminPage = () => {
     setError("");
     try {
       const res = await axios.post(
-        "http://localhost:3001/api/bgaiv1/admin/login",
+        `${process.env.NEXT_PUBLIC_API_URL}/api/bgaiv1/admin/login`,
         {
           email,
           password,
