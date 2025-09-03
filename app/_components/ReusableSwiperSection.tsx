@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import CustomButton from "./CustomButton";
 import { ChevronRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface AboutSectionSwiperProps {
   title: string;
@@ -29,6 +30,7 @@ interface AboutSectionSwiperProps {
   textContentClass?: string;
   swiperWrapperClass?: string;
   swiperClass?: string;
+  onClick?: any;
 }
 const AboutSectionSwiper: React.FC<AboutSectionSwiperProps> = ({
   title,
@@ -50,7 +52,10 @@ const AboutSectionSwiper: React.FC<AboutSectionSwiperProps> = ({
   textWidth,
   desc2,
   desc3,
+  onClick,
 }) => {
+  const router = useRouter();
+
   return (
     <div
       className={`flex ${direction} gap-[50px] justify-center items-center    ${wrapperClass}`}
@@ -89,6 +94,7 @@ const AboutSectionSwiper: React.FC<AboutSectionSwiperProps> = ({
             width={buttonWidth}
             expandedWidth={buttonExpandedWidth}
             height={buttonHeight}
+            onClick={onClick}
           />
         )}
       </div>

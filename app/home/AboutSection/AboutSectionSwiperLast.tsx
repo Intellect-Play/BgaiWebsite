@@ -3,8 +3,11 @@ import { lastSwiperItems } from "@/app/constants/swiperItems";
 import { ChevronRight } from "lucide-react";
 import React from "react";
 import styles from "./AboutSection.module.scss";
+import { useRouter } from "next/navigation";
 
 const AboutSectionSwiperLast = () => {
+  const router = useRouter();
+
   return (
     <div>
       <div className="max-w-[1200px] mb-[4rem] mx-auto mt-[50px] px-[10px]">
@@ -24,6 +27,7 @@ const AboutSectionSwiperLast = () => {
           spanWord="global"
           additionText="ambitions"
           textWidth="max-w-[500px]"
+          onClick={() => router.push("/games")}
         />
       </div>
     </div>

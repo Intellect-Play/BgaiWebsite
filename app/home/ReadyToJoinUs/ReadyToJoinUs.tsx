@@ -1,5 +1,6 @@
 import CustomButton from "@/app/_components/CustomButton";
 import { ChevronRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 interface ReadyBannerProps {
@@ -23,6 +24,8 @@ const ReadyToJoinUs: React.FC<ReadyBannerProps> = ({
   textSize,
   textWeight,
 }) => {
+  const router = useRouter();
+
   return (
     <div
       className="relative  w-full flex items-center justify-center text-center"
@@ -61,6 +64,7 @@ const ReadyToJoinUs: React.FC<ReadyBannerProps> = ({
         <div>
           <CustomButton
             title="SEE OPEN POSITIONS"
+            onClick={() => router.push("/jobs")}
             width="17rem"
             expandedWidth="17.5rem"
             textColor="#fff"

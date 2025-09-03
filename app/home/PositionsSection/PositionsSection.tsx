@@ -5,6 +5,7 @@ import "swiper/css/pagination";
 import { ChevronRight, ChevronUp, Check } from "lucide-react";
 import CustomButton from "@/app/_components/CustomButton";
 import { COLORS } from "@/app/constants/colors/colors";
+import { useRouter } from "next/navigation";
 
 interface PositionsSectionProps {
   backgroundImage?: string;
@@ -15,6 +16,8 @@ const PositionsSection: React.FC<PositionsSectionProps> = ({
   backgroundImage,
   overlayColor = "rgba(0,0,0,0.7)",
 }) => {
+  const router = useRouter();
+
   return (
     <div
       className="relative px-[10px] mt-[50px] w-full h-[600px] flex items-center justify-center bg-cover bg-fixed bg-center"
@@ -124,14 +127,20 @@ const PositionsSection: React.FC<PositionsSectionProps> = ({
             </SwiperSlide>
             <SwiperSlide className="rounded-[5px] px-[10px] py-[20px]  max-h-[330px]">
               <div className="w-full h-full  flex flex-col items-center justify-center">
-                <p className="text-center text-[28px] max-w-[100px] w-full text-center text-[#444444] font-[600]">
+                <p
+                  onClick={() => router.push("/jobs")}
+                  className="text-center text-[28px] max-w-[100px] w-full text-center text-[#444444] font-[600]"
+                >
                   See All Openings
                 </p>
                 <div
                   className=" px-[10px] py-[10px] rounded-full cursor-pointer"
                   style={{ backgroundColor: COLORS.primary }}
                 >
-                  <ChevronRight color="white" />
+                  <ChevronRight
+                    onClick={() => router.push("/jobs")}
+                    color="white"
+                  />
                 </div>
               </div>
             </SwiperSlide>
@@ -141,6 +150,7 @@ const PositionsSection: React.FC<PositionsSectionProps> = ({
         <div className="flex justify-center items-center mt-[30px]">
           <CustomButton
             title="SEE ALL OPENINGS"
+            onClick={() => router.push("/jobs")}
             icon={<ChevronRight size={20} />}
             width="16rem"
             expandedWidth="16.5rem"

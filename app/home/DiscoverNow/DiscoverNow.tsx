@@ -3,8 +3,11 @@ import CustomButton from "@/app/_components/CustomButton";
 import { ChevronDown } from "lucide-react";
 import React from "react";
 import "./discoverNow.scss";
+import { useRouter } from "next/navigation";
 
 const DiscoverNow: React.FC = () => {
+  const router = useRouter();
+
   return (
     <div className="relative w-full h-[600px]">
       <video
@@ -28,6 +31,7 @@ const DiscoverNow: React.FC = () => {
             width="12rem"
             expandedWidth="12.5rem"
             height="3rem"
+            onClick={() => router.push("/about")}
           />
         </div>
       </div>

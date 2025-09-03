@@ -11,7 +11,10 @@ import "./AboutSection.module.scss";
 import styles from "./AboutSection.module.scss";
 // import { Autoplay } from "swiper/modules";
 import AboutSectionSwiper from "@/app/_components/ReusableSwiperSection";
+import { useRouter } from "next/navigation";
 const AboutSectionSwiperTop = () => {
+  const router = useRouter();
+
   return (
     <div>
       <div className="">
@@ -29,6 +32,7 @@ const AboutSectionSwiperTop = () => {
           swiperClass={styles.aboutSwiper}
           descWidth={styles.aboutTextWidth}
           spanWord="Dreams"
+          onClick={() => router.push("/about")}
         />
       </div>
     </div>
