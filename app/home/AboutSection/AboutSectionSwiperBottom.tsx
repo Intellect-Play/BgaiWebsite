@@ -11,8 +11,11 @@ import "./AboutSection.module.scss";
 import styles from "./AboutSection.module.scss";
 // import { Autoplay } from "swiper/modules";
 import AboutSectionSwiper from "@/app/_components/ReusableSwiperSection";
+import { useRouter } from "next/navigation";
 
 const AboutSectionSwiperBottom = () => {
+  const router = useRouter();
+
   return (
     <div className="">
       <AboutSectionSwiper

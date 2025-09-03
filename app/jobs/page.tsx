@@ -7,6 +7,7 @@ import "../jobs/jobs.scss";
 import CustomButton from "../_components/CustomButton";
 import { ChevronRight } from "lucide-react";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 interface Job {
   _id: string;
@@ -19,6 +20,8 @@ const page = () => {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(false);
   const apiEndpoint = "api/bgaiv1/jobs";
+
+  const router = useRouter();
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -98,6 +101,7 @@ const page = () => {
             width="10rem"
             expandedWidth="10.5rem"
             icon={<ChevronRight />}
+            onClick={() => router.push("/about")}
           />
         </div>
       </div>
