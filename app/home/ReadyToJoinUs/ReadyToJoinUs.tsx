@@ -19,7 +19,7 @@ const ReadyToJoinUs: React.FC<ReadyBannerProps> = ({
   description,
   backgroundImage,
   overlayColor = "rgba(0,0,0,0.7)",
-  height = "60vh",
+  height = "68vh",
   textColor,
   textSize,
   textWeight,
