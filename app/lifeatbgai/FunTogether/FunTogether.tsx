@@ -9,12 +9,8 @@ import "swiper/css/pagination";
 
 const slides = [
   {
-    image: "/images/funImages/fun1.jpg",
-    caption: "IT & Office Admin Team in New York, October 2022",
-  },
-  {
     image: "/images/funImages/fun2.jpg",
-    caption: "IT & Office Admin Team in New York, October 2022",
+    caption: "Azerbaijan, 2025",
   },
   // daha fazla slide ekleyebilirsin
 ];

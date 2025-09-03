@@ -60,7 +60,7 @@ const page = () => {
           </p>
           <p className="max-w-[1200px] jobsParagraph text-[18px] text-[#444444]">
             Everyone says ‘we are a team’. It’s up to you to find the right one.
-            Peak teams are autonomous, fast-moving and focused on improving
+            Bgai teams are autonomous, fast-moving and focused on improving
             constantly to become the best at what they do. We work together to
             support every member of our team and to make each other stronger. We
             aspire to make a huge impact at a global level and are looking for
@@ -85,7 +85,7 @@ const page = () => {
         <div className="peak-left">
           <h2>
             Are you curious to learn <br /> more about life at{" "}
-            <strong>Peak?</strong>
+            <strong>Bgai?</strong>
           </h2>
         </div>
         <div className="peak-right">

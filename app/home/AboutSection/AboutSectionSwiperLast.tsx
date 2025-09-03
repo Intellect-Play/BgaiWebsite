@@ -7,7 +7,7 @@ import styles from "./AboutSection.module.scss";
 const AboutSectionSwiperLast = () => {
   return (
     <div>
-      <div className="max-w-[1200px] mx-auto mt-[50px] px-[10px]">
+      <div className="max-w-[1200px] mb-[4rem] mx-auto mt-[50px] px-[10px]">
         <AboutSectionSwiper
           title="We are game studio with "
           description="At BGAI Tech, we create games that cross borders and bring players together. From casual fun to challenging RPGs, our goal is to design experiences that anyone, anywhere, can enjoy."

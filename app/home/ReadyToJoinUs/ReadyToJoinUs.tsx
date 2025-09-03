@@ -25,7 +25,7 @@ const ReadyToJoinUs: React.FC<ReadyBannerProps> = ({
 }) => {
   return (
     <div
-      className="relative w-full flex items-center justify-center text-center"
+      className="relative  w-full flex items-center justify-center text-center"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",

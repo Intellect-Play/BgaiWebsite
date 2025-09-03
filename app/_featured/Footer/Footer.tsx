@@ -37,7 +37,7 @@ const Footer = () => {
         </div>
         <div className="flex justify-between border-t-[1px] border-t-[#A3A4A8]  mt-[30px] pt-[20px]  ">
           <div className="text-[#A3A4A8]">
-            <p>© Peak. All Rights Reserved</p>
+            <p>© Bgai. All Rights Reserved</p>
           </div>
           <div className="flex gap-[10px] justify-center items-center pb-[20px]">
             <Instagram size={24} color="#F6F6FB" className="cursor-pointer " />

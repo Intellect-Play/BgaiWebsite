@@ -34,46 +34,57 @@ const NewGamesSection = () => {
   }, []);
 
   return (
-    <div>
+    <div className="games-wrapper">
+      <div className="games-header">
+        <h2>Games</h2>
+      </div>
+
       <div className="games-grid">
         {games.map((game) => (
           <div className="game-card" key={game._id}>
-            <p className="category">{game.category}</p>
-            <h3 className="title">{game.title}</h3>
-            <img
-              src={
-                game.image && game.image.startsWith("http")
-                  ? game.image
-                  : game.image
-                  ? `${process.env.NEXT_PUBLIC_API_URL}${game.image}`
-                  : "/images/defaultGameImage.png"
-              }
-              alt={game.title}
-              style={{
-                width: 160,
-                height: 160,
-                objectFit: "cover",
-                borderRadius: 20,
-              }}
-            />
+            <div className="card-top">
+              <span className="category" title={game.category}>
+                {game.category}
+              </span>
+              <h3 className="title" title={game.title}>
+                {game.title}
+              </h3>
+            </div>
+
+            <div className="thumb-wrap">
+              <img
+                className="thumb"
+                src={
+                  game.image && game.image.startsWith("http")
+                    ? game.image
+                    : game.image
+                    ? `${process.env.NEXT_PUBLIC_API_URL}${game.image}`
+                    : "/images/defaultGameImage.png"
+                }
+                alt={game.title}
+                loading="lazy"
+              />
+            </div>
 
             <div className="store-buttons">
               <Image
-                alt="google"
+                alt="Google Play'den indir"
                 src="/images/googledownload.png"
-                width={120}
-                height={40}
+                width={140}
+                height={44}
                 onClick={() => handleStoreClick(game.googlePlayLink)}
                 className="cursor-pointer store-btn"
               />
+              {/* 
               <Image
-                alt="appstore"
+                alt="App Store'dan indir"
                 src="/images/appstoredownload.png"
-                width={120}
-                height={40}
+                width={140}
+                height={44}
                 onClick={() => handleStoreClick(game.appStoreLink)}
                 className="cursor-pointer store-btn"
-              />
+              /> 
+              */}
             </div>
           </div>
         ))}

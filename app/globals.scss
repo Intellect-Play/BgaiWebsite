@@ -40,3 +40,8 @@
 .animate-ripple {
   animation-delay: calc(var(--i, 0) * 0.2s);
 }
+
+html,
+body {
+  overflow-x: hidden;
+}

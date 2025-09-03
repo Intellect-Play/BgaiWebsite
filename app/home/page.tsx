@@ -6,6 +6,7 @@ import PositionsSection from "./PositionsSection/PositionsSection";
 import AboutSectionSwiperLast from "./AboutSection/AboutSectionSwiperLast";
 import HowWeWorkHome from "./howWeWorkHome/howWeWorkHome";
 import ReadyToJoinUs from "./ReadyToJoinUs/ReadyToJoinUs";
+import SplitText from "@/components/SplitText";
 
 const HomePage: React.FC = () => {
   return (
@@ -14,7 +15,7 @@ const HomePage: React.FC = () => {
       <AboutSection />
       <PositionsSection backgroundImage="/images/guysimage.jpg" />
       <AboutSectionSwiperLast />
-      <HowWeWorkHome />
+      {/* <HowWeWorkHome /> */}
       <ReadyToJoinUs
         backgroundImage="/images/guysimage.jpg"
         title="Ready to join us?"

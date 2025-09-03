@@ -27,7 +27,7 @@ export const howWeWorkItems = [
     id: 4,
     image: "/images/howWeWorkImages/how4.jpg",
     alt: "Team working",
-    desc: "Customer Experience is the only division at Peak that directly...",
+    desc: "Customer Experience is the only division at Bgai that directly...",
     title: "Customer Experience",
   },
   {
@@ -41,7 +41,7 @@ export const howWeWorkItems = [
     id: 6,
     image: "/images/howWeWorkImages/how6.jpg",
     alt: "Team working",
-    desc: "At Peak we aim to develop the best games for our users that will...",
+    desc: "At Bgai we aim to develop the best games for our users that will...",
     title: "Product",
   },
 ];

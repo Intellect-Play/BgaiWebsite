@@ -353,7 +353,6 @@ export default function GamesPage() {
                     onChange={(e) =>
                       setForm((f) => ({ ...f, appStoreLink: e.target.value }))
                     }
-                    required
                   />
                 </label>
 
