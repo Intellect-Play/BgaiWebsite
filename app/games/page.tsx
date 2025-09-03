@@ -4,10 +4,12 @@ import PageBannerComponent from "../_components/PageBannerComponent";
 import GamesSection from "./gamesSection/GamesSection";
 import ReadyToJoinUs from "../home/ReadyToJoinUs/ReadyToJoinUs";
 import NewGamesSection from "./newGamesSection/NewGamesSection";
+import TargetCursor from "@/components/TargetCursor";
 
 const page = () => {
   return (
     <div>
+      <TargetCursor spinDuration={2} hideDefaultCursor={true} />
       <PageBannerComponent
         title="Our Games"
         textSize="4rem"

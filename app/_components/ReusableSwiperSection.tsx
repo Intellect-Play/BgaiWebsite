@@ -8,6 +8,10 @@ import "swiper/css/pagination";
 import CustomButton from "./CustomButton";
 import { ChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
+import ShinyText from "@/components/ShinyText";
+import TextType from "@/components/TextType";
+import BlurText2 from "@/components/BlurText2";
+import SplitText from "@/components/SplitText";
 
 interface AboutSectionSwiperProps {
   title: string;
@@ -64,8 +68,12 @@ const AboutSectionSwiper: React.FC<AboutSectionSwiperProps> = ({
         className={` w-[50%] flex flex-col mx-auto max-w-[600px] gap-[20px] ${textContentClass}`}
       >
         <h1 className={`text-[3rem] text-[#444444] ${textWidth}`}>
-          {title} <span className="font-[600]">{spanWord}</span> {additionText}
+          <BlurText2
+            delay={600}
+            text={[title, spanWord, additionText].filter(Boolean).join(" ")}
+          />
         </h1>
+
         <p
           className={`max-w-[450px]  text-[18px] text-[#444444] ${descWidth} `}
         >

@@ -4,6 +4,7 @@ import { ChevronDown } from "lucide-react";
 import React from "react";
 import "./discoverNow.scss";
 import { useRouter } from "next/navigation";
+import BlurText from "@/components/BlurText";
 
 const DiscoverNow: React.FC = () => {
   const router = useRouter();
@@ -19,9 +20,12 @@ const DiscoverNow: React.FC = () => {
       />
 
       <div className="absolute  top-[0] left-[0] w-full h-full bg-[rgba(0,0,0,0.8)] flex flex-col justify-center items-center text-white text-center">
-        <h1 className="text-4xl discoverFont text-[3.5rem] text-[#fff] max-w-[550px] mb-4">
-          People are at the <span className="font-[1000]">core</span> of
-          everything{" "}
+        <h1 className="text-4xl discoverFont text-[3.5rem] text-center text-[#fff] max-w-[550px] mx-auto mb-4">
+          <BlurText
+            text="People are the core of everything"
+            delay={500}
+            className="text-center"
+          />
         </h1>
 
         <div className="mt-[4rem]">

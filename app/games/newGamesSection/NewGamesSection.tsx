@@ -41,7 +41,7 @@ const NewGamesSection = () => {
 
       <div className="games-grid">
         {games.map((game) => (
-          <div className="game-card" key={game._id}>
+          <div className="cursor-target game-card" key={game._id}>
             <div className="card-top">
               <span className="category" title={game.category}>
                 {game.category}
@@ -53,6 +53,7 @@ const NewGamesSection = () => {
 
             <div className="thumb-wrap">
               <img
+                onClick={() => handleStoreClick(game.googlePlayLink)}
                 className="thumb"
                 src={
                   game.image && game.image.startsWith("http")
