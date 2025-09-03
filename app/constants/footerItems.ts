@@ -3,19 +3,15 @@ export const footerData = [
     title: "Company",
     links: [
       { label: "About Us", path: "/about" },
-      { label: "Life at Bgai", path: "/life-at-bgai" },
+      { label: "Life at Bgai", path: "/lifeatbgai" },
       { label: "Games", path: "/games" },
-      { label: "How We Work", path: "/howWeWork" },
-      { label: "Internships", path: "/internships" },
-      { label: "Jobs", path: "/jobs" },
     ],
   },
   {
     title: "Links",
     links: [
-      { label: "Art Station", path: "/art-station" },
-      { label: "Press", path: "/press" },
-      { label: "Contact", path: "/contact" },
+      { label: "How We Work", path: "/howWeWork" },
+      { label: "Jobs", path: "/jobs" },
     ],
   },
   {
