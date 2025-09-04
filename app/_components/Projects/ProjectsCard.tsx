@@ -17,6 +17,8 @@ const ProjectsCard: React.FC<CardProps> = ({
   id,
   imageSrc,
   title,
+  description,
+  showReadMore = true,
   onReadMoreClick,
 }) => {
   const router = useRouter();
@@ -33,15 +35,18 @@ const ProjectsCard: React.FC<CardProps> = ({
         </div>
         <div className="projects-card-content">
           <h3>{title}</h3>
-          {/* <p>{description}</p> */}
-          <div
-            className="read-more"
-            onClick={(e) => {
-              handleClick;
-            }}
-          >
-            Read more <ChevronRight size={16} />
-          </div>
+          {description && <p>{description}</p>}
+          {showReadMore && (
+            <div
+              className="read-more"
+              onClick={(e) => {
+                e.stopPropagation();
+                onReadMoreClick?.();
+              }}
+            >
+              Read more <ChevronRight size={16} />
+            </div>
+          )}
         </div>
       </div>
     </div>

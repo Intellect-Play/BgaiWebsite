@@ -32,8 +32,8 @@ const DiscoverNow: React.FC = () => {
           <CustomButton
             title="Discover Now"
             icon={<ChevronDown size={20} />}
-            width="12rem"
-            expandedWidth="12.5rem"
+            width="13rem"
+            expandedWidth="13.5rem"
             height="3rem"
             onClick={() => router.push("/about")}
           />

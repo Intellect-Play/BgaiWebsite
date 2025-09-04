@@ -38,6 +38,10 @@ const PositionsSection: React.FC<PositionsSectionProps> = ({
       .catch((err) => console.log(err));
   }, []);
 
+  const handleStoreClick = (link: any) => {
+    if (link) window.open(link, "_blank");
+  };
+
   const toImg = (src?: string) => {
     if (!src) return "/images/defaultGameImage.png";
     if (/^https?:\/\//i.test(src)) return src;
@@ -77,27 +81,20 @@ const PositionsSection: React.FC<PositionsSectionProps> = ({
               <SwiperSlide
                 key={game._id}
                 className="max-h-[360px] rounded-[20px]"
-                style={{
-                  background: "rgba(1, 13, 20, 1)",
-                  borderRadius: 16,
-                  boxShadow: " 0 4px 30px rgba(0, 0, 0, 0.1)",
-                  backdropFilter: "blur(3.4px)",
-                  WebkitBackdropFilter: "blur(3.4px)",
-                  border: "1px solid rgba(39, 24, 24, 0.32)",
-                }}
               >
                 <div className="group h-full rounded-[12px]   pb-[10px] bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
                   {/* Image (fills the card height; title stays at the bottom) */}
-                  <div className="relative w-full flex-1 overflow-hidden rounded-tl-[20px] rounded-tr-[20px]">
+                  <div className="relative w-full flex-1 overflow-hidden rounded-tl-[10px] rounded-tr-[10px]">
                     <div
                       className="relative w-full h-full"
                       style={{ aspectRatio: "16/11" }}
                     >
                       <Image
+                        onClick={() => handleStoreClick(game.googlePlayLink)}
                         src={toImg(game.image)}
                         alt={game.title}
                         fill
-                        className="object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                        className="object-cover group-hover:scale-[1.03] transition-transform duration-300 cursor-pointer"
                         sizes="(max-width: 768px) 90vw, (max-width: 1200px) 33vw, 400px"
                       />
                     </div>
@@ -105,7 +102,7 @@ const PositionsSection: React.FC<PositionsSectionProps> = ({
 
                   {/* Title (always below the image) */}
                   <div className="mt-[12px]">
-                    <p className="text-[18px] text-[#fff] font-semibold text-[#222] text-center truncate">
+                    <p className="text-[18px] text-black font-semibold text-[#222] text-center truncate">
                       {game.title}
                     </p>
                   </div>
@@ -140,8 +137,8 @@ const PositionsSection: React.FC<PositionsSectionProps> = ({
             title="SEE ALL GAMES"
             onClick={() => router.push("/games")}
             icon={<ChevronRight size={20} />}
-            width="14rem"
-            expandedWidth="14.5rem"
+            width="14.5rem"
+            expandedWidth="15rem"
             height="3rem"
           />
         </div>

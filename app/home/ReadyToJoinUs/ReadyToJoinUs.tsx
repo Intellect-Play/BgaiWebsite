@@ -61,12 +61,12 @@ const ReadyToJoinUs: React.FC<ReadyBannerProps> = ({
             )
           )}
         </h1>
-        <div>
+        <div className="mt-6">
           <CustomButton
             title="SEE OPEN POSITIONS"
             onClick={() => router.push("/jobs")}
-            width="17rem"
-            expandedWidth="17.5rem"
+            width="17.5rem"
+            expandedWidth="18rem"
             textColor="#fff"
             icon={<ChevronRight />}
           />

@@ -40,10 +40,24 @@ const Footer = () => {
             <p>© Bgai. All Rights Reserved</p>
           </div>
           <div className="flex gap-[10px] justify-center items-center pb-[20px]">
-            <Instagram size={24} color="#F6F6FB" className="cursor-pointer " />
-            <Twitter size={24} color="#F6F6FB" className="cursor-pointer" />
-            <Linkedin size={24} color="#F6F6FB" className="cursor-pointer" />
-            <Youtube size={24} color="#F6F6FB" className="cursor-pointer" />
+            <a
+              href="https://www.instagram.com/bgaitech/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="hover:opacity-80 transition"
+            >
+              <Instagram size={24} color="white" />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/bg-ai-tech-co/posts/?feedView=all"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="hover:opacity-80 transition"
+            >
+              <Linkedin size={24} color="white" />
+            </a>
           </div>
         </div>
       </div>
