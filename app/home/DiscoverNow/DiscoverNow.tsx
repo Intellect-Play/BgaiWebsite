@@ -13,7 +13,7 @@ const DiscoverNow: React.FC = () => {
     <div className="relative w-full h-[600px]">
       <video
         className="w-full h-full object-cover"
-        src={"/videos/homePageVideo.mp4"}
+        src={"/videos/anotherVideo.mp4"}
         autoPlay
         loop
         muted
