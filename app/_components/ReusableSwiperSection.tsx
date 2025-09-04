@@ -12,7 +12,7 @@ import ShinyText from "@/components/ShinyText";
 import TextType from "@/components/TextType";
 import BlurText2 from "@/components/BlurText2";
 import SplitText from "@/components/SplitText";
-// aa
+// aaaa
 interface AboutSectionSwiperProps {
   title: string;
   description: string;
