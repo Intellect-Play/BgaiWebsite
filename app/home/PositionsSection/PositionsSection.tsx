@@ -1,159 +1,147 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { ChevronRight, ChevronUp, Check } from "lucide-react";
+import axios from "axios";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { ChevronRight } from "lucide-react";
 import CustomButton from "@/app/_components/CustomButton";
 import { COLORS } from "@/app/constants/colors/colors";
-import { useRouter } from "next/navigation";
 
 interface PositionsSectionProps {
   backgroundImage?: string;
   overlayColor?: string;
 }
 
+type Game = {
+  _id: string;
+  title: string;
+  image: string;
+  googlePlayLink?: string;
+};
+
 const PositionsSection: React.FC<PositionsSectionProps> = ({
   backgroundImage,
   overlayColor = "rgba(0,0,0,0.7)",
 }) => {
   const router = useRouter();
+  const [games, setGames] = useState<Game[]>([]);
+  const apiEndpoint = "api/bgaiv1/games";
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/${apiEndpoint}`)
+      .then((res) => setGames(res.data?.games ?? []))
+      .catch((err) => console.log(err));
+  }, []);
+
+  const toImg = (src?: string) => {
+    if (!src) return "/images/defaultGameImage.png";
+    if (/^https?:\/\//i.test(src)) return src;
+    return `${process.env.NEXT_PUBLIC_API_URL}${src}`;
+  };
 
   return (
     <div
-      className="relative px-[10px] mt-[50px] w-full h-[600px] flex items-center justify-center bg-cover bg-fixed bg-center"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-      }}
+      className="relative px-[10px]  mt-[50px] w-full h-[650px] flex items-center justify-center bg-cover bg-fixed bg-center"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       {/* Overlay */}
       <div
         className="absolute top-0 left-0 w-full h-full"
         style={{ backgroundColor: overlayColor }}
-      ></div>
+      />
 
       {/* Content */}
-      <div className="relative max-w-[1200px] mx-auto  z-10 w-full h-full ">
-        <h1 className="max-w-[1200px] mt-[30px] mx-auto text-[3rem] text-[#fff]">
-          {" "}
-          <span className="font-[700]">Open</span> Positions
+      <div className="relative max-w-[1200px] mx-auto z-10 w-full h-full">
+        <h1 className="max-w-[1200px] mt-[30px] mx-auto text-[3rem] text-[#fff] font-[700]">
+          Games
         </h1>
-        <div className="max-w-[1000px] mx-auto mt-[50px] flex items-center justify-center">
+
+        <div className="max-w-[1100px] mx-auto mt-[30px] flex items-center justify-center">
           <Swiper
             slidesPerView={3}
-            spaceBetween={30}
-            pagination={{
-              clickable: true,
-            }}
+            spaceBetween={24}
             breakpoints={{
-              0: {
-                slidesPerView: 1,
-              },
-              640: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 3,
-              },
+              0: { slidesPerView: 1 },
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
             }}
             className="myNewSwiper"
-            style={{ height: "330px" }}
+            style={{ height: "380px" }}
           >
-            <SwiperSlide className="rounded-[5px] px-[10px] py-[20px] max-h-[330px]">
-              <div className="flex flex-col gap-[5px] h-full">
-                <p className="text-[28px] w-full text-center text-[#444444] font-[600]">
-                  Game Designer
-                </p>
+            {games.map((game) => (
+              <SwiperSlide
+                key={game._id}
+                className="max-h-[360px] rounded-[20px]"
+                style={{
+                  background: "rgba(1, 13, 20, 1)",
+                  borderRadius: 16,
+                  boxShadow: " 0 4px 30px rgba(0, 0, 0, 0.1)",
+                  backdropFilter: "blur(3.4px)",
+                  WebkitBackdropFilter: "blur(3.4px)",
+                  border: "1px solid rgba(39, 24, 24, 0.32)",
+                }}
+              >
+                <div className="group h-full rounded-[12px]   pb-[10px] bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
+                  {/* Image (fills the card height; title stays at the bottom) */}
+                  <div className="relative w-full flex-1 overflow-hidden rounded-tl-[20px] rounded-tr-[20px]">
+                    <div
+                      className="relative w-full h-full"
+                      style={{ aspectRatio: "16/11" }}
+                    >
+                      <Image
+                        src={toImg(game.image)}
+                        alt={game.title}
+                        fill
+                        className="object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                        sizes="(max-width: 768px) 90vw, (max-width: 1200px) 33vw, 400px"
+                      />
+                    </div>
+                  </div>
 
-                <div
-                  style={{
-                    backgroundColor: COLORS.primary,
-                  }}
-                  className="w-[70px] h-[3px]  mx-auto my-[10px] rounded-full"
-                ></div>
-
-                <p className="text-[18px]  text-[#444444]">
-                  Do you see games not just as entertainment, but as experiences
-                  to shape? We need a Game Designer who can balance mechanics,
-                  create engaging challenges, and design worlds that keep
-                  players coming back for more.
-                </p>
-                <div className="cursor-pointer flex justify-center items-center  mt-auto font-[600] ">
-                  <CustomButton
-                    title="APPLY"
-                    icon={<Check color={COLORS.primary} size={18} />}
-                    width="8rem"
-                    expandedWidth="8.5rem"
-                    height="3rem"
-                    bgColor="#fff"
-                    textColor="#444444"
-                    fontSize="14px"
-                  />
+                  {/* Title (always below the image) */}
+                  <div className="mt-[12px]">
+                    <p className="text-[18px] text-[#fff] font-semibold text-[#222] text-center truncate">
+                      {game.title}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className=" rounded-[5px] px-[10px] py-[20px]  max-h-[330px]">
-              <div className="flex flex-col h-full gap-[5px]">
-                <p className="text-[28px] w-full text-center text-[#444444] font-[600]">
-                  UI/UX Artist (Games)
-                </p>
+              </SwiperSlide>
+            ))}
 
-                <div
-                  style={{
-                    backgroundColor: COLORS.primary,
-                  }}
-                  className="w-[70px] h-[3px] mx-auto my-[10px] rounded-full"
-                ></div>
-
-                <p className="text-[18px]  text-[#444444]">
-                  We’re on the hunt for a UI/UX Artist who can make our games
-                  not just fun to play, but a joy to experience. From sleek
-                  menus to intuitive player flows, you’ll design interfaces that
-                  feel smooth, stylish, and player-friendly.
-                </p>
-
-                <div className="cursor-pointer flex justify-center items-center  mt-auto font-[600] ">
-                  <CustomButton
-                    title="APPLY"
-                    icon={<Check color={COLORS.primary} size={18} />}
-                    width="8rem"
-                    expandedWidth="8.5rem"
-                    height="3rem"
-                    bgColor="#fff"
-                    textColor="#444444"
-                    fontSize="14px"
-                  />
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="rounded-[5px] px-[10px] py-[20px]  max-h-[330px]">
-              <div className="w-full h-full  flex flex-col items-center justify-center">
+            {/* SEE ALL GAMES slide */}
+            <SwiperSlide className="max-h-[360px] ">
+              <div className="w-full h-full bg-white/90 backdrop-blur rounded-[12px] p-[12px] shadow-lg flex flex-col items-center justify-center">
                 <p
-                  onClick={() => router.push("/jobs")}
-                  className="text-center text-[28px] max-w-[100px] w-full text-center text-[#444444] font-[600]"
+                  onClick={() => router.push("/games")}
+                  className="text-center text-[22px] font-[700] text-[#222] cursor-pointer"
                 >
-                  See All Openings
+                  See All Games
                 </p>
                 <div
-                  className=" px-[10px] py-[10px] rounded-full cursor-pointer"
+                  className="mt-[12px] px-[10px] py-[10px] rounded-full cursor-pointer"
                   style={{ backgroundColor: COLORS.primary }}
+                  onClick={() => router.push("/games")}
                 >
-                  <ChevronRight
-                    onClick={() => router.push("/jobs")}
-                    color="white"
-                  />
+                  <ChevronRight color="white" />
                 </div>
               </div>
             </SwiperSlide>
           </Swiper>
         </div>
 
+        {/* Bottom CTA: SEE ALL GAMES */}
         <div className="flex justify-center items-center mt-[30px]">
           <CustomButton
-            title="SEE ALL OPENINGS"
-            onClick={() => router.push("/jobs")}
+            title="SEE ALL GAMES"
+            onClick={() => router.push("/games")}
             icon={<ChevronRight size={20} />}
-            width="16rem"
-            expandedWidth="16.5rem"
+            width="14rem"
+            expandedWidth="14.5rem"
             height="3rem"
           />
         </div>
