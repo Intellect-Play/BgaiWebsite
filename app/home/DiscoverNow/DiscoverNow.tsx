@@ -5,7 +5,7 @@ import React from "react";
 import "./discoverNow.scss";
 import { useRouter } from "next/navigation";
 import BlurText from "@/components/BlurText";
-
+// aa
 const DiscoverNow: React.FC = () => {
   const router = useRouter();
 
