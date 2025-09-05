@@ -44,7 +44,7 @@ const Accardion = () => {
       <div className="benefits-wrapper">
         <div className="benefits-left">
           <h2 className="font-[600]">
-            Perks <span>&</span> Benefits
+            Perks <span>&</span> Benefitss
           </h2>
         </div>
 
