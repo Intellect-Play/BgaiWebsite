@@ -33,6 +33,7 @@ const AboutSectionSwiperBottom = () => {
         swiperClass={styles.aboutSwiper}
         descWidth={styles.aboutTextWidth}
         direction="flex-row-reverse"
+        onClick={() => router.push("/about")}
       />
     </div>
   );
